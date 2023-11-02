@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        lettucesocial | Customer Panel
+    </title>
+    <script src="./assets/js/index.js"></script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form>
+            <legend>
+                Search by City:
+            </legend>
+            <ul>
+                <li>
+                    <label
+                        for="txtCity"
+                    >
+                        City
+                    </label>
+
+                    <input type="search" id="txtCity" name="txtCity">
+                </li>
+            </ul>
+            <ul>
+                <button
+                    onclick="searchByCity()"
+                    type="button"
+                >
+                    Search
+                </button>
+            </ul>
+        </form>
+
+        <form>
+            <legend>
+                Search by Zip Code:
+            </legend>
+            <ul>
+                <li>
+                    <label
+                        for="txtZipCode"
+                    >
+                        Zip Code
+                    </label>
+
+                    <input type="search" id="txtZipCode" name="txtZipCode">
+                </li>
+            </ul>
+            <ul>
+                <button
+                    onclick="searchByZipCode()"
+                    type="button"
+                >
+                    Search
+                </button>
+            </ul>
+        </form>
+        <!-- <form>
+            <legend>
+                Search on map:
+            </legend>
+            <ul>
+                <li>
+                    <label
+                        for="txtZipCode"
+                    >
+                        Click on map
+                    </label>
+
+                    
+                </li>
+            </ul>
+            <ul>
+                <button>Search</button>
+            </ul>
+        </form> -->
+        <section>
+            <ul
+                id="ulCreatorList"
+                name="ulCreatorList"
+            >
+                <!-- <li>
+                    <dl>
+                        <dt>
+                            Image
+                        </dt>
+                        <dd>
+                            <img src="" alt="" width="50px">
+                        </dd>
+                        
+                        <dt>
+                            First Name
+                        </dt>
+                        <dd>
+                            Julia
+                        </dd>
+
+                        <dt>
+                            Last Name
+                        </dt>
+                        <dd>
+                            Fogel
+                        </dd>
+
+                        <dt>
+                            City
+                        </dt>
+                        <dd>
+                            Agoura Hills
+                        </dd>
+
+                        <dt>
+                            Zip/Postal Code
+                        </dt>
+                        <dd>
+                            91301
+                        </dd>
+
+                    </dl>
+                </li> -->
+            </ul>
+        </section>
+    </main>
+    <aside></aside>
+    <footer></footer>
+</body>
+</html>

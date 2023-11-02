@@ -1,0 +1,32 @@
+<form>
+    <legend>
+        Filter Creators
+    </legend>
+
+    <fieldset>
+        <ul>
+            <li>
+                <label for="txtZipCode">
+                    ZipCode:
+                </label>
+                <input
+                    type="search"
+                    id="txtZipCode"
+                    name="txtZipCode"
+                    [(ngModel)]="zipCode"
+                >
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <button
+                    type="button"
+                    class="primary"
+                    (click)="filter()"
+                >
+                    Search
+                </button>
+            </li>
+        </ul>
+    </fieldset>
+</form>

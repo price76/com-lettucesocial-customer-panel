@@ -1,0 +1,10 @@
+<ol class="container">
+    <li
+        *ngFor = 'let creator of creatorList'
+        class="contract-list-item"
+    >
+        <creator-list-item
+            [creator]="creator"
+        ></creator-list-item>
+    </li>
+</ol>
