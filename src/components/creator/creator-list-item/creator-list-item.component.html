@@ -1,8 +1,41 @@
 <dl>
-        <dt>
-            First Name
-        </dt>
-        <dd>
-            {{creator.firstName}}
-        </dd>
+    <dt>
+        Image
+    </dt>
+    <dd>
+        <img
+            src="https://static.wixstatic.com/media/793325_ea89ac1724394cea8606bffcc835966c~mv2.png/v1/crop/x_0,y_145,w_486,h_358/fill/w_456,h_336,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/LS_Creator_Billy%20Thorpe.png"
+        >
+    </dd>
+
+    <dt>
+        Title
+    </dt>
+    <dd>
+        {{creator.firstName}} {{creator.lastName}}
+    </dd>
+
 </dl>
+<ul>
+    <li>
+        <a
+            [href]="creator.instagramURL"
+            target="_blank"
+        >
+            Visit Instagram Pofile
+        </a>
+    </li>
+    <li>
+        <button
+            type="button"
+        >
+            Collabroate With {{creator.firstName}}
+        </button>
+        <a
+            [routerLink]="['/','collabrotaion',creator._id,'selectPlane']"
+        >
+            Collabroate With {{creator.firstName}}
+        </a>
+    </li>
+
+</ul>

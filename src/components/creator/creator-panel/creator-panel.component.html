@@ -1,7 +1,25 @@
 
-<creator-filter
-    (setFilter) = 'setFilter($event)'
-></creator-filter>
+<form>
+    <legend>
+        Hi 👋
+        Let’s match you
+        with a local nano-influencer
+    </legend>
+    <ul>
+        <li>
+            <label 
+                for="cmpFilterCreator"
+            >
+                Enter the zip code of your business location
+            </label>
+            <creator-filter
+                id="cmpFilterCreator"
+                name="cmpFilterCreator"
+                (setFilter) = 'setFilter($event)'
+            ></creator-filter>
+        </li>
+    </ul>
+</form>
 
 <div
     *ngIf = '!filterOptions.zipCode && !isLoading'
@@ -18,9 +36,15 @@
     [creatorList]="creatorList"
 ></creator-list>
 
-<empty-list
+<div
     *ngIf = '!isLoading && creatorList && creatorList.length == 0'
-></empty-list>
+>
+    <p>
+        There are currently no nano-influencers in your area.
+    </p>
+    <business-request-notification></business-request-notification>
+</div>
+
 
 
 
