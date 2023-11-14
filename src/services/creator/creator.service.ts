@@ -14,9 +14,9 @@ export class CreatorService
 		private URL_CREATOR_GETALL: string = `${environment.API_URL}/creator`;
 		private URL_CREATOR_GETALL_BY_ZIPCODE: string = `${environment.API_URL}/creator/byZipCode`;
 
-	constructor(
-		private httpInterceptor: HttpInterceptorService,
-	) { }
+		constructor(
+			private httpInterceptor: HttpInterceptorService,
+		) { }
 
 		async getAllCreator
 		():Promise<any>

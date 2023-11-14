@@ -22,6 +22,8 @@ import { CollaborationPlaneComponent } from '../components/collaboration/collabo
 import { RequestCollaborationComponent } from '../components/collaboration/request-collaboration/request-collaboration.component';
 import { AddBusinessComponent } from '../components/business/add-business/add-business.component';
 import { CollaborationReceiptComponent } from '../components/collaboration/collaboration-receipt/collaboration-receipt.component';
+import { LoadingComponent } from 'src/components/share/loading/loading.component';
+import { ValidationResultComponent } from 'src/components/share/validation-result/validation-result.component';
 
 
 
@@ -39,12 +41,14 @@ import { CollaborationReceiptComponent } from '../components/collaboration/colla
 			EmptyListComponent,
 			LogoComponent,
 			BusinessRequestNotificationComponent,
-   BusinessRequestCollaborationComponent,
-   CollaborationInvoiceComponent,
-   CollaborationPlaneComponent,
-   RequestCollaborationComponent,
-   AddBusinessComponent,
-   CollaborationReceiptComponent
+			BusinessRequestCollaborationComponent,
+			CollaborationInvoiceComponent,
+			CollaborationPlaneComponent,
+			RequestCollaborationComponent,
+			AddBusinessComponent,
+			CollaborationReceiptComponent,
+			LoadingComponent,
+			ValidationResultComponent
 		],
 		imports: [
 			BrowserModule,
