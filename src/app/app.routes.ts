@@ -22,7 +22,7 @@ export const routes: Routes = [
                     component: CollaborationPlaneComponent,
                 },
                 {
-                    path:'invoice/:planeId',
+                    path:'invoice/:packageId',
                     component: CollaborationInvoiceComponent,
                 },
             ]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CreatorService } from 'src/services/creator/creator.service';
 
 @Component(
 	{
@@ -11,14 +12,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class RequestCollaborationComponent implements OnInit
 	{
-		creatorId?:string;
+		creatorId:string ="";
+		isLoading:boolean = false;
 		creator?: any;
 
 		constructor
 		(
 			private route: ActivatedRoute,
 			private router: Router,
-			// private contractService: ContractService,
+			private creatorService: CreatorService,
 			// private errorHelper: ErrorHelper
 		){}
 
@@ -38,8 +40,7 @@ export class RequestCollaborationComponent implements OnInit
 							}
 						else
 							{
-								//this.navigate_findCreatorByZipCode();
-								alert('!')
+								this.navigate_findCreatorByZipCode();
 							}
 						
 					}
@@ -56,13 +57,18 @@ export class RequestCollaborationComponent implements OnInit
 			}
 
 
-		getCreatorById
-		(): void
+		async getCreatorById
+		(): Promise<void>
 			{
-				this.creator = {
-					_id:"123456",
-					title: 'Ashley S',
-					instagramHandle:'@ashleystudent'
-				}
+				this.isLoading = true;
+
+				const data = await this.creatorService.getCreatorById(
+					this.creatorId
+				);
+
+				this.creator = data.creator;
+				
+				this.isLoading = false;
+
 			}
 	}
