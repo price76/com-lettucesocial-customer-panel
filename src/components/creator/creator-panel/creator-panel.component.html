@@ -1,50 +1,49 @@
+<section class="container">
+    
+    <form>
+        <legend>
+            Hi 👋
+            Let’s match you
+            with a local nano-influencer
+        </legend>
+        <ul>
+            <li>
+                <label 
+                    for="cmpFilterCreator"
+                >
+                    Enter the zip code of your business location
+                </label>
+                <creator-filter
+                    id="cmpFilterCreator"
+                    name="cmpFilterCreator"
+                    (setFilter) = 'setFilter($event)'
+                ></creator-filter>
+            </li>
+        </ul>
+    </form>
 
-<form>
-    <legend>
-        Hi 👋
-        Let’s match you
-        with a local nano-influencer
-    </legend>
-    <ul>
-        <li>
-            <label 
-                for="cmpFilterCreator"
-            >
-                Enter the zip code of your business location
-            </label>
-            <creator-filter
-                id="cmpFilterCreator"
-                name="cmpFilterCreator"
-                (setFilter) = 'setFilter($event)'
-            ></creator-filter>
-        </li>
-    </ul>
-</form>
+    <div
+        *ngIf = '!filterOptions.zipCode && !isLoading'
+    >
+        Enter Zipcode to show creator list ...
+    </div>
 
-<div
-    *ngIf = '!filterOptions.zipCode && !isLoading'
->
-    Enter Zipcode to show creator list ...
-</div>
+    <loading-list
+        *ngIf = 'isLoading'
+    ></loading-list>
 
-<loading-list
-    *ngIf = 'isLoading'
-></loading-list>
+    <creator-list
+        *ngIf = '!isLoading && creatorList'
+        [creatorList]="creatorList"
+    ></creator-list>
 
-<creator-list
-    *ngIf = '!isLoading && creatorList'
-    [creatorList]="creatorList"
-></creator-list>
+    <div
+        *ngIf = '!isLoading && creatorList && creatorList.length == 0'
+    >
+        <p>
+            There are currently no nano-influencers in your area.
+        </p>
+        <business-request-notification></business-request-notification>
+    </div>
 
-<div
-    *ngIf = '!isLoading && creatorList && creatorList.length == 0'
->
-    <p>
-        There are currently no nano-influencers in your area.
-    </p>
-    <business-request-notification></business-request-notification>
-</div>
-
-
-
-
+</section>

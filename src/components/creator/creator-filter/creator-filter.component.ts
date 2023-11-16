@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 	{
 		selector: 'creator-filter',
 		templateUrl: './creator-filter.component.html',
-		styleUrls: ['./creator-filter.component.css']
+		styleUrls: ['./creator-filter.component.scss']
 	}
 )
 

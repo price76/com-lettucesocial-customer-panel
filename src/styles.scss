@@ -9,6 +9,18 @@ body {
   margin: 0;
 }
 
+body:has(.creator-filter) {
+  background-image: linear-gradient(
+    to right bottom,
+    #9eda9e,
+    #aadb91,
+    #b8da84,
+    #c8d978,
+    #d9d76d
+  );
+  min-height: 100vh;
+}
+
 @font-face {
   font-family: NunitoSans;
   font-style: normal;
@@ -32,6 +44,14 @@ body {
   font-style: normal;
   font-weight: 200;
   src: url("assets/fonts/NunitoSans-ExtraLight.ttf");
+}
+.container {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
 }
 
 html,
