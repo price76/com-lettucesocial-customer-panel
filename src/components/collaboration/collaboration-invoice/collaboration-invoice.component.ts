@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ErrorHelper } from 'src/helper/errorHelper';
 import { OrderService } from 'src/services/order/order.service';
 import { PackageService } from 'src/services/package/package.service';
 
@@ -23,6 +24,7 @@ export class CollaborationInvoiceComponent implements OnInit
 			private orderService:OrderService,
 			private route: ActivatedRoute,
 			private router: Router,
+			private errorHelper: ErrorHelper
 		){}
 
 		ngOnInit(): void {
@@ -123,10 +125,33 @@ export class CollaborationInvoiceComponent implements OnInit
 							this.packageId,
 						);
 
-						let paymentUrl = data.paymentUrl;
+						if
+						(
+							data.paymentUrl
+						)
+							{
+								let paymentUrl = data.paymentUrl;
 						
-						this.isLoading = false;
+								this.navigate_paymentFlow(paymentUrl);
+							}
+						else
+							{
+								this.isLoading = false;
+								this.errorHelper.showErrorAsAlert("Something went wrong!")
+							}
+
+						
+						
+						
 					}
+			}
+
+		navigate_paymentFlow
+		(
+			paymentUrl:string
+		):void
+			{
+				window.location.href = paymentUrl;
 			}
 
 		navigate_findCreatorByZipCode
