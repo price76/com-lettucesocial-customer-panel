@@ -1,20 +1,25 @@
 <h1>
     What’s Next?
 </h1>
+<loading
+    *ngIf="isLoading"
+></loading>
 
-<section>
+<section
+    *ngIf="!isLoading && package"
+>
     <h2>
-        HARVEST
+        {{package.title}}
     </h2>
     <ol>
         <li>
-            4 Instagram Reel
+            {{package.reelsNumber}} Instagram Reel
         </li>
         <li>
-            2 Instagram Post
+            {{package.postNumbers}} Instagram Post
         </li>
         <li>
-            Collaborate with <b>two</b> local nano-influencer
+            Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer
         </li>
     </ol>
 
@@ -33,9 +38,10 @@
     </p>
     <fieldset>
         <button
+            *ngIf="!isLoading && package"
             (click)="pay()"
         >
-            Pay $10
+            Pay ${{package.deposit}}
         </button>
     </fieldset>
 

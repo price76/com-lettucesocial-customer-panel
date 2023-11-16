@@ -13,6 +13,7 @@ export class CreatorService
 
 		private URL_CREATOR_GETALL: string = `${environment.API_URL}/creator`;
 		private URL_CREATOR_GETALL_BY_ZIPCODE: string = `${environment.API_URL}/creator/byZipCode`;
+		private URL_CREATOR_BY_ID: string = `${environment.API_URL}/creator`;
 
 		constructor(
 			private httpInterceptor: HttpInterceptorService,
@@ -39,6 +40,23 @@ export class CreatorService
 				let headers: HttpHeaders = new HttpHeaders();
 
 				const url: string = `${this.URL_CREATOR_GETALL_BY_ZIPCODE}/${zipcode.toString()}`
+
+				const result = await this.httpInterceptor.get(
+					url,
+					headers
+				);
+
+				return result;
+			}
+
+		async getCreatorById
+		(
+			creatorId:string
+		):Promise<any>
+			{
+				let headers: HttpHeaders = new HttpHeaders();
+
+				const url: string = `${this.URL_CREATOR_BY_ID}/${creatorId}`
 
 				const result = await this.httpInterceptor.get(
 					url,

@@ -2,72 +2,35 @@
     <h1>
         Select Collaboration
     </h1>
-    <ul>
-        <li>
+    <loading
+        *ngIf="isLoading"
+    ></loading>
+    <ul
+        *ngIf="!isLoading && packageList && packageList.length>0"
+    >
+        <li
+            *ngFor="let package of packageList"
+        >
             <h2>
-                PLANT
+                {{package.title}}
             </h2>
             <ol>
                 <li>
-                    1 Instagram Reel
+                    {{package.reelsNumber}} Instagram Reel
                 </li>
                 <li>
-                    1 Instagram Post
+                    {{package.postNumbers}} Instagram Post
                 </li>
                 <li>
-                    Collaborate with one local nano-influencer
+                    Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer
                 </li>
             </ol>
             <a
-                [routerLink]="['/','collabrotaion',creatorId,'invoice',1]"
+                [routerLink]="['/','collabrotaion',creatorId,'invoice',package._id]"
             >
-                70$
+                {{package.price}}$
             </a>
         </li>
 
-        <li>
-            <h2>
-                GROW
-            </h2>
-            <ol>
-                <li>
-                    2 Instagram Reel
-                </li>
-                <li>
-                    1 Instagram Post
-                </li>
-                <li>
-                    Collaborate with one local nano-influencer
-                </li>
-            </ol>
-            <a
-                [routerLink]="['/','collabrotaion',creatorId,'invoice',2]"
-            >
-                100$
-            </a>
-        </li>
-
-        <li>
-            <h2>
-                HARVEST
-            </h2>
-            <ol>
-                <li>
-                    4 Instagram Reel
-                </li>
-                <li>
-                    2 Instagram Post
-                </li>
-                <li>
-                    Collaborate with <b>two</b> local nano-influencer
-                </li>
-            </ol>
-            
-            <a
-                [routerLink]="['/','collabrotaion',creatorId,'invoice',3]"
-            >
-            250$
-            </a>
-        </li>
     </ul>
 </section>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PackageService } from 'src/services/package/package.service';
 
 @Component(
 	{
@@ -12,12 +13,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CollaborationPlaneComponent 
 	{
 		creatorId?:string;
+		isLoading:boolean = false;
+		packageList?:any[];
 
 		constructor
 		(
 			private route: ActivatedRoute,
 			private router: Router,
-			// private contractService: ContractService,
+			private packageService: PackageService,
 			// private errorHelper: ErrorHelper
 		){}
 
@@ -37,12 +40,13 @@ export class CollaborationPlaneComponent
 									creatorIdParameter
 								)
 									{
-										this.creatorId = creatorIdParameter
+										this.creatorId = creatorIdParameter;
+										this.getAllPackage();
 									}
 								else
 									{
-										//this.navigate_findCreatorByZipCode();
-										alert('!')
+										this.navigate_findCreatorByZipCode();
+										
 									}
 								
 							}
@@ -50,6 +54,18 @@ export class CollaborationPlaneComponent
 					}
 				
 				
+			}
+
+		async getAllPackage
+		():Promise<void>
+			{
+				this.isLoading = true;
+
+				const data = await this.packageService.getAllPackage();
+
+				this.packageList = data.packageList;
+				
+				this.isLoading = false;
 			}
 
 		navigate_findCreatorByZipCode
