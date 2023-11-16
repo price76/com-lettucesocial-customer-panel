@@ -5,7 +5,7 @@ import { CreatorService } from 'src/services/creator/creator.service';
 	{
 		selector: 'creator-panel',
 		templateUrl: './creator-panel.component.html',
-		styleUrls: ['./creator-panel.component.css']
+		styleUrls: ['./creator-panel.component.scss']
 	}
 )
 
