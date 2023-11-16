@@ -6,7 +6,7 @@ import { BusinessService } from 'src/services/business/business.service';
 	{
 		selector: 'add-business',
 		templateUrl: './add-business.component.html',
-		styleUrls: ['./add-business.component.css']
+		styleUrls: ['./add-business.component.scss']
 	}
 )
 
