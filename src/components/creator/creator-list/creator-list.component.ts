@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
 	{
 		selector: 'creator-list',
 		templateUrl: './creator-list.component.html',
-		styleUrls: ['./creator-list.component.css']
+		styleUrls: ['./creator-list.component.scss']
 	}
 )
 
