@@ -6,7 +6,7 @@ import { CreatorService } from 'src/services/creator/creator.service';
 	{
 		selector: 'request-collaboration',
 		templateUrl: './request-collaboration.component.html',
-		styleUrls: ['./request-collaboration.component.css']
+		styleUrls: ['./request-collaboration.component.scss']
 	}
 )
 
