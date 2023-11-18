@@ -10,6 +10,7 @@
     >
         <li
             *ngFor="let package of packageList"
+            [id] = 'package._id'
         >
             <h2>
                 {{package.title}}
