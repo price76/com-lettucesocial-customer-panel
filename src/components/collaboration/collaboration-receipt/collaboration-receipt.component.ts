@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 	{
 		selector: 'collaboration-receipt',
 		templateUrl: './collaboration-receipt.component.html',
-		styleUrls: ['./collaboration-receipt.component.css']
+		styleUrls: ['./collaboration-receipt.component.scss']
 	}
 )
 
