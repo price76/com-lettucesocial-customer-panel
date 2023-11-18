@@ -1,49 +1,51 @@
-<h1>
-    What’s Next?
-</h1>
-<loading
-    *ngIf="isLoading"
-></loading>
-
-<section
-    *ngIf="!isLoading && package"
-    [id] = "'pln_'+package._id"
->
-    <h2>
-        {{package.title}}
-    </h2>
-    <ol>
-        <li>
-            {{package.reelsNumber}} Instagram Reel
-        </li>
-        <li>
-            {{package.postNumbers}} Instagram Post
-        </li>
-        <li>
-            Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer
-        </li>
-    </ol>
-
-    <u>
-        250$
-    </u>
+<section class="container">
+    <h1>
+        What’s Next?
+    </h1>
+    <loading
+        *ngIf="isLoading"
+    ></loading>
     
+    <div
+        *ngIf="!isLoading && package"
+        [id] = "'pln_'+package._id"
+    >
+        <h2>
+            {{package.title}}
+        </h2>
+        <ol>
+            <li>
+                {{package.reelsNumber}} Instagram Reel
+            </li>
+            <li>
+                {{package.postNumbers}} Instagram Post
+            </li>
+            <li>
+                Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer
+            </li>
+        </ol>
+    
+        <u>
+            250$
+        </u>
+        
+    </div>
+    
+    <form>
+        <legend>
+            Pay 10% deposit & start
+        </legend>
+        <p>
+            Once the collaboration is complete, the remaining balance will be charged to the credit card on file.
+        </p>
+        <fieldset>
+            <button
+                *ngIf="!isLoading && package"
+                (click)="pay()"
+            >
+                Pay ${{package.deposit}}
+            </button>
+        </fieldset>
+    
+    </form>
 </section>
-
-<form>
-    <legend>
-        Pay 10% deposit & start
-    </legend>
-    <p>
-        Once the collaboration is complete, the remaining balance will be charged to the credit card on file.
-    </p>
-    <fieldset>
-        <button
-            *ngIf="!isLoading && package"
-            (click)="pay()"
-        >
-            Pay ${{package.deposit}}
-        </button>
-    </fieldset>
-
-</form>

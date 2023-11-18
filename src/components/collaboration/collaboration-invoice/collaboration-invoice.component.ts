@@ -8,7 +8,7 @@ import { PackageService } from 'src/services/package/package.service';
 	{
 		selector: 'collaboration-invoice',
 		templateUrl: './collaboration-invoice.component.html',
-		styleUrls: ['./collaboration-invoice.component.css']
+		styleUrls: ['./collaboration-invoice.component.scss']
 	}
 )
 
