@@ -60,27 +60,37 @@ section {
         padding: 12px 0;
         text-align: center;
       }
-
-      &:nth-child(n) {
-        background-image: linear-gradient(
-          to right,
-          #d4d4d4,
-          #c1c1c1,
-          #afafaf,
-          #9d9d9d,
-          #8b8b8b
-        );
-      }
-      &:nth-child(2n) {
-        background-image: linear-gradient(
-          to right top,
-          #90d29a,
-          #73bf90,
-          #57ab85,
-          #39987b,
-          #108571
-        );
-      }
+    }
+    #pln_6554a07e5f52a9024db02fe5 {
+      background-image: linear-gradient(
+        to right,
+        #d4d4d4,
+        #c1c1c1,
+        #afafaf,
+        #9d9d9d,
+        #8b8b8b
+      );
+    }
+    #pln_6554a0e25f52a9024db02fe6 {
+      background-image: linear-gradient(
+        to right top,
+        #90d29a,
+        #73bf90,
+        #57ab85,
+        #39987b,
+        #108571
+      );
+    }
+    #pln_6554a1175f52a9024db02fe7 {
+      background-image: linear-gradient(
+        to right top,
+        #c6d45a,
+        #9fc34c,
+        #78b140,
+        #4d9f38,
+        #0d8c32
+      );
     }
   }
 }
+
