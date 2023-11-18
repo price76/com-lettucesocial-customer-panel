@@ -6,7 +6,7 @@ import { PackageService } from 'src/services/package/package.service';
 	{
 		selector: 'collaboration-plane',
 		templateUrl: './collaboration-plane.component.html',
-		styleUrls: ['./collaboration-plane.component.css']
+		styleUrls: ['./collaboration-plane.component.scss']
 	}
 )
 

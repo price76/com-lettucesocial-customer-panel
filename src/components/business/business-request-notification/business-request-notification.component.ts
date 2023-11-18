@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 	{
 		selector: 'business-request-notification',
 		templateUrl: './business-request-notification.component.html',
-		styleUrls: ['./business-request-notification.component.css']
+		styleUrls: ['./business-request-notification.component.scss']
 	}
 )
 

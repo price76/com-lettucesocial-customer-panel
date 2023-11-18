@@ -1,13 +1,18 @@
-
 form {
   legend {
     font-size: 28px;
     font-weight: bold;
   }
-  label{
+  label {
     font-size: 14px;
     display: block;
     margin: 5px 0 10px 0;
     font-weight: 500;
+  }
+}
+
+div {
+  p {
+    font-size: 12px;
   }
 }
