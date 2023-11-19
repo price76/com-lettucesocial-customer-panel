@@ -32,6 +32,44 @@ export class AddBusinessComponent
 					hasError: false,
 					messageList: []
 				};
+
+				if
+				(
+					!business.ownerTitle
+				)
+					{
+						validationResult.hasError = true;
+						validationResult.messageList.push("Enter First Name and Last Name.");
+					}
+
+				if
+				(
+					!business.email
+				)
+					{
+						validationResult.hasError = true;
+						validationResult.messageList.push("Enter Email.");
+					}
+
+				if
+				(
+					!business.mobile
+				)
+					{
+						validationResult.hasError = true;
+						validationResult.messageList.push("Enter Mobile Number.");
+					}
+
+				if
+				(
+					!business.businessName
+				)
+					{
+						validationResult.hasError = true;
+						validationResult.messageList.push("Enter Business Name.");
+					}
+
+
 				return validationResult;
 			}
 
