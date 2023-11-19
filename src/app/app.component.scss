@@ -3,9 +3,24 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
+  margin-top: 32px;
   gap: 8px;
   logo {
     width: 70px;
     height: 70px;
+  }
+}
+
+nav {
+  margin-top: 16px;
+  ul {
+    display: flex;
+    gap: 16px;
+    li{
+      a{
+        color: #000;
+        font-size: 16px;
+      }
+    }
   }
 }
