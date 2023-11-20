@@ -71,4 +71,20 @@ export class RequestCollaborationComponent implements OnInit
 				this.isLoading = false;
 
 			}
+
+		getCreatorImageUrl
+		():string
+			{
+				const instagramHandleLoweCase = this.creator.instagramHandle.toLowerCase();
+				const renamedInstagramHandleLoweCase = instagramHandleLoweCase.replace(/\./g, '_');
+				const url = `http://assets.lettucesocial.com/creators/${renamedInstagramHandleLoweCase}.png`;
+				return url;
+			}
+
+		getCreatorTitle
+		():string
+			{
+				const result = `${this.creator.firstName} ${this.creator.lastName.slice(0,1)}`;
+				return result;
+			}
 	}

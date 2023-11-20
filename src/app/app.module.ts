@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -10,7 +10,7 @@ import { CreatorListItemComponent } from '../components/creator/creator-list-ite
 import { CreatorFilterComponent } from '../components/creator/creator-filter/creator-filter.component';
 import { LoadingListComponent } from '../components/share/loading-list/loading-list.component';
 
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { EmptyListComponent } from 'src/components/share/empty-list/empty-list.component';
@@ -25,7 +25,7 @@ import { CollaborationReceiptComponent } from '../components/collaboration/colla
 import { LoadingComponent } from 'src/components/share/loading/loading.component';
 import { ValidationResultComponent } from 'src/components/share/validation-result/validation-result.component';
 
-
+import * as Sentry from "@sentry/angular-ivy";
 
 
 @NgModule(
@@ -57,7 +57,26 @@ import { ValidationResultComponent } from 'src/components/share/validation-resul
 			FormsModule,
 			HttpClientModule
 		],
-		providers: [],
+		providers: [
+			{
+				provide: ErrorHandler,
+				useValue: Sentry.createErrorHandler(
+					{
+						showDialog: true,
+				  	}
+				)
+			},
+			{
+				provide: Sentry.TraceService,
+				deps: [Router],
+			},
+			{
+				provide: APP_INITIALIZER,
+				useFactory: () => () => {},
+				deps: [Sentry.TraceService],
+				multi: true,
+			}
+		],
 		bootstrap: [AppComponent]
 	}
 )

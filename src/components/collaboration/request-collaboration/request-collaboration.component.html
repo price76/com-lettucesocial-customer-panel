@@ -3,7 +3,7 @@
 ></loading>
 
 <dl
-    *ngIf="creator"
+    *ngIf="!isLoading && creator"
     class="container"
 >
     <dt>
@@ -11,7 +11,7 @@
     </dt>
     <dd>
         <img
-            src="https://static.wixstatic.com/media/793325_ea89ac1724394cea8606bffcc835966c~mv2.png/v1/crop/x_0,y_145,w_486,h_358/fill/w_456,h_336,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/LS_Creator_Billy%20Thorpe.png"
+        [src]="getCreatorImageUrl()"
         >
     </dd>
 
@@ -19,8 +19,8 @@
         Title
     </dt>
     <dd>
-        <!-- {{creator.title}} -->
-        test content
+        
+        {{getCreatorTitle()}}
     </dd>
 
     <dt>

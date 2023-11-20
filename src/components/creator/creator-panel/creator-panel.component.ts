@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ErrorHelper } from 'src/helper/errorHelper';
 import { CreatorService } from 'src/services/creator/creator.service';
 
 @Component(
@@ -18,7 +19,8 @@ export class CreatorPanelComponent
 
 		constructor
 		(
-			private creatorService: CreatorService
+			private creatorService: CreatorService,
+			private errorHelper:ErrorHelper
 		){}
 
 		setFilter
@@ -50,15 +52,27 @@ export class CreatorPanelComponent
 		async getAllCreatorByZipcode
 		():Promise<void>
 			{
-				this.isLoading = true;
+				try
+					{
+						this.isLoading = true;
 
-				const data = await this.creatorService.getAllCreatorByZipcode(
-					this.filterOptions.zipCode
+						const data = await this.creatorService.getAllCreatorByZipcode(
+							this.filterOptions.zipCode
+						)
+
+						this.creatorList = data.creatorList;
+						
+						this.isLoading = false;
+					}
+				catch
+				(
+					error:any
 				)
-
-				this.creatorList = data.creatorList;
-				
-				this.isLoading = false;
+					{
+						this.isLoading = false;
+						this.errorHelper.showErrorAsAlert(error);
+					}
 			}
+
 		
 	}

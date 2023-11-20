@@ -16,7 +16,15 @@ export class CreatorListItemComponent
 		():string
 			{
 				const instagramHandleLoweCase = this.creator.instagramHandle.toLowerCase();
-				const url = `http://assets.lettucesocial.com/creators/${instagramHandleLoweCase}.png`;
+				const renamedInstagramHandleLoweCase = instagramHandleLoweCase.replace(/\./g, '_');
+				const url = `http://assets.lettucesocial.com/creators/${renamedInstagramHandleLoweCase}.png`;
 				return url;
+			}
+
+		getCreatorTitle
+		():string
+			{
+				const result = `${this.creator.firstName} ${this.creator.lastName.slice(0,1)}`;
+				return result;
 			}
 	}
