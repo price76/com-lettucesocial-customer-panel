@@ -1,5 +1,4 @@
 form {
-
   legend {
     display: none;
   }
@@ -13,15 +12,16 @@ form {
         border: none;
         border-radius: 8px;
         padding: 14px 0;
+        margin-bottom: 4px;
         &::placeholder {
           color: #c0c4d6;
           font-size: 16px;
         }
       }
     }
-    button.primary{
+    button.primary {
       border: none;
-      background-color: #764AF1;
+      background-color: #764af1;
       color: #fff;
       font-size: 16px;
       font-weight: 500;
@@ -30,6 +30,9 @@ form {
       width: 100%;
       display: block;
       padding: 12px 0;
+    }
+    &:nth-child(2){
+      margin-top: 4px;
     }
   }
 }
