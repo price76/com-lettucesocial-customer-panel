@@ -10,10 +10,14 @@ import { Component } from '@angular/core';
 
 export class BusinessRequestNotificationComponent
 	{
-		save
-		():void
+		business!:any;
+		
+		onBusinessAdded
+		(
+			business:any
+		):void
 			{
-				
+				this.business = business;
 			}
 
 	}

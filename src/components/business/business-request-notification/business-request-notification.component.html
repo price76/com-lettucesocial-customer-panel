@@ -1,7 +1,12 @@
-<add-business>
-</add-business>
+<add-business
+    *ngIf="!business"
+    (onBusinessAdded)="onBusinessAdded($event)"
+></add-business>
+
+
 <section
     id="requestSubmited"
+    *ngIf="business"
 >
     <logo></logo>
     <h3>

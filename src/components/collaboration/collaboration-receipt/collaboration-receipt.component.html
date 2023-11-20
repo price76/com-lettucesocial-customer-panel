@@ -1,6 +1,14 @@
-<section class="container">
+<loading
+    *ngIf="isLoading"
+></loading>
+
+<section
+    id="addBusiness"
+    class="container"
+    *ngIf="!isLoading && order && !business"
+>
     <h1>
-        Congratulations �
+        Congratulations 🎉
     </h1>
     <p>
         You successfully submitted your collaboration request to Ashley!
@@ -8,9 +16,16 @@
     <p>
         <u>Fill out the form</u> below to receive the next steps and further details via email and text.
     </p>
-    <add-business></add-business>
+    <add-business
+        (onBusinessAdded)="onBusinessAdded($event)"
+    ></add-business>
 </section>
-<section class="container">
+
+<section
+    id="finished"
+    class="container"
+    *ngIf="!isLoading && order && business"
+>
     <h1>
         Thank you!
     </h1>
@@ -18,7 +33,7 @@
         Please check your email for more details
     </p>
     <p>
-        We can’t wait to help you grow ☺️
+        We can’t wait to help you grow 😊
     </p>
     <a href="#">
         Follow Us

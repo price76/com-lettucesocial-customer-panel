@@ -1,73 +1,72 @@
-section {
-  &:nth-child(1) {
-    h1 {
-      font-size: 18px;
-      font-weight: 500;
-      display: block;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    p {
-      font-size: 14px;
-      margin-top: 8px;
-      u {
-        font-weight: bold;
-        font-size: 14px;
-        text-decoration: underline;
-      }
-    }
-  }
-  add-business {
-    margin-top: 16px;
+#addBusiness {
+  h1 {
+    font-size: 18px;
+    font-weight: 500;
     display: block;
+    text-align: center;
+    margin-bottom: 8px;
   }
-  &:nth-child(2) {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    h1 {
-      font-size: 22px;
-      font-weight: normal;
+  p {
+    font-size: 14px;
+    margin-top: 8px;
+    u {
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: underline;
     }
-    p {
-      &:nth-child(2) {
-        text-decoration: underline;
-        font-weight: bold;
-        font-size: 14px;
-      }
+  }
+}
+add-business {
+  margin-top: 16px;
+  display: block;
+}
+
+#finished {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  h1 {
+    font-size: 22px;
+    font-weight: normal;
+  }
+  p {
+    &:nth-child(2) {
+      text-decoration: underline;
+      font-weight: bold;
       font-size: 14px;
     }
-    a {
-      border: none;
-      background-color: #764af1;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 500;
-      border-radius: 8px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 0;
-      margin-top: 12px;
-      text-transform: uppercase;
-      text-align: center;
-      position: relative;
-      &::before{
-            content: "";
-            background-image: url("../../../assets/images/icons/instagram-white.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 25px;
-            height: 25px;
-            display: block;
-            background-size: contain;
-            position: absolute;
-            left: 15px;
-      }
+    font-size: 14px;
+  }
+  a {
+    border: none;
+    background-color: #764af1;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    margin-top: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    &::before{
+          content: "";
+          background-image: url("../../../assets/images/icons/instagram-white.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 25px;
+          display: block;
+          background-size: contain;
+          position: absolute;
+          left: 15px;
     }
   }
 }

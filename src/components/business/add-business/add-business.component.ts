@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { BusinessService } from 'src/services/business/business.service';
 
@@ -12,6 +12,8 @@ import { BusinessService } from 'src/services/business/business.service';
 
 export class AddBusinessComponent
 	{
+
+		@Output() onBusinessAdded= new EventEmitter<any>();
 
 		business:any ={};
 		isLoading:boolean = false;
@@ -99,7 +101,9 @@ export class AddBusinessComponent
 							);
 	
 							console.log(data.businessId);
-							this.business._id = data.businessId
+							this.business._id = data.businessId;
+
+							this.onBusinessAdded.emit(this.business);
 	
 							this.isLoading = false;
 	
