@@ -1,7 +1,15 @@
-<add-business
+<section
     *ngIf="!business"
-    (onBusinessAdded)="onBusinessAdded($event)"
-></add-business>
+>
+    <p>
+        Fill out the form, and we'll work to match your business with a nano-influencer within 72 hours.
+    </p>
+    <add-business
+        
+        (onBusinessAdded)="onBusinessAdded($event)"
+    ></add-business>
+</section>
+
 
 
 <section

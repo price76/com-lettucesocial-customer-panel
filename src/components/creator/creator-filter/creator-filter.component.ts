@@ -22,8 +22,7 @@ export class CreatorFilterComponent
 			zipCode: string
 		): any
 			{
-				console.log('asdf');
-				
+
 				let validationResult: any ={
 					hasError: false,
 					messageList: []
@@ -43,7 +42,7 @@ export class CreatorFilterComponent
 				)
 					{
 						validationResult.hasError = true;
-						validationResult.messageList.push("Enter Valid Zipcode.");
+						validationResult.messageList.push("Incorrect input! Please retry.");
 					}
 
 				return validationResult;

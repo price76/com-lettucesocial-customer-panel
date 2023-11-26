@@ -26,6 +26,7 @@ import { LoadingComponent } from 'src/components/share/loading/loading.component
 import { ValidationResultComponent } from 'src/components/share/validation-result/validation-result.component';
 
 import * as Sentry from "@sentry/angular-ivy";
+import { LogoTypeComponent } from '../components/share/logo-type/logo-type.component';
 
 
 @NgModule(
@@ -48,7 +49,8 @@ import * as Sentry from "@sentry/angular-ivy";
 			AddBusinessComponent,
 			CollaborationReceiptComponent,
 			LoadingComponent,
-			ValidationResultComponent
+			ValidationResultComponent,
+   LogoTypeComponent
 		],
 		imports: [
 			BrowserModule,

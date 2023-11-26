@@ -1,8 +1,11 @@
 <section class="container">
     
-    <form>
+    <form
+        *ngIf = '!isLoading && !filterOptions.zipCode'
+    >
+        <logo-type></logo-type>
         <legend>
-            Hi 👋
+            Hi 👋 <br>
             Let’s match you
             with a local nano-influencer
         </legend>
@@ -24,13 +27,17 @@
 
     <div
         *ngIf = '!filterOptions.zipCode && !isLoading'
-    >
-        Enter Zipcode to show creator list ...
-    </div>
+    ></div>
 
     <loading-list
         *ngIf = 'isLoading'
     ></loading-list>
+
+    <b
+        *ngIf = '!isLoading && creatorList'
+    >
+        {{creatorList.length}} results found
+    </b>
 
     <creator-list
         *ngIf = '!isLoading && creatorList'
@@ -41,7 +48,7 @@
         *ngIf = '!isLoading && creatorList && creatorList.length == 0'
     >
         <p>
-            There are currently no nano-influncers in your area.
+            Right now,we don't have any nano-influencers in your area.
         </p>
         <business-request-notification></business-request-notification>
     </div>
