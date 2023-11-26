@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 
-body:has(.creator-filter) {
+body {
   background-image: linear-gradient(
     to right bottom,
     #9eda9e,
