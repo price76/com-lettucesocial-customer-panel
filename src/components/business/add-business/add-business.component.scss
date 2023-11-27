@@ -7,13 +7,13 @@ form {
   ul {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     li {
       label {
-        color: #a5aaa9;
+        color: #323333;
         font-size: 14px;
         display: block;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
       }
       input {
         width: 100%;
@@ -40,4 +40,8 @@ form {
       margin-bottom: 12px;
     }
   }
+}
+.validation-result{
+  background-color: transparent;
+  list-style: none;
 }
