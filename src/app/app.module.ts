@@ -27,6 +27,8 @@ import { ValidationResultComponent } from 'src/components/share/validation-resul
 
 import * as Sentry from "@sentry/angular-ivy";
 import { LogoTypeComponent } from '../components/share/logo-type/logo-type.component';
+import { BusinessRequestNotificationFinishedComponent } from '../components/business/business-request-notification-finished/business-request-notification-finished.component';
+import { NavigationRibonComponent } from '../components/share/navigation-ribon/navigation-ribon.component';
 
 
 @NgModule(
@@ -50,7 +52,9 @@ import { LogoTypeComponent } from '../components/share/logo-type/logo-type.compo
 			CollaborationReceiptComponent,
 			LoadingComponent,
 			ValidationResultComponent,
-   LogoTypeComponent
+   LogoTypeComponent,
+   BusinessRequestNotificationFinishedComponent,
+   NavigationRibonComponent
 		],
 		imports: [
 			BrowserModule,

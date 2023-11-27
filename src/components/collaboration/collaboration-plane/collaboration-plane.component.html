@@ -28,7 +28,7 @@
                     {{package.postNumbers}} Instagram Post<span *ngIf="package.postNumbers > 1" >s</span>
                 </li>
                 <li>
-                    Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer<span *ngIf="package.postNumbers > 1" >s</span>
+                    Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer<span *ngIf="package.influencerNumber > 1" >s</span>
                 </li>
             </ol>
             <a
@@ -39,4 +39,7 @@
         </li>
 
     </ul>
+
+    <navigation-ribon></navigation-ribon>
+
 </section>

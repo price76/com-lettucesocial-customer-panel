@@ -1,0 +1,21 @@
+section {
+    height: 40svh;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    logo {
+      width: 50px;
+      height: 50px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  

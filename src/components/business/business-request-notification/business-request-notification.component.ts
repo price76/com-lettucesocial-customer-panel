@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component(
 	{
@@ -10,7 +11,15 @@ import { Component } from '@angular/core';
 
 export class BusinessRequestNotificationComponent
 	{
+		@Input() zipcode!:number;
+
 		business!:any;
+
+		
+		constructor
+		(
+			private router: Router,
+		){}
 		
 		onBusinessAdded
 		(
@@ -18,6 +27,21 @@ export class BusinessRequestNotificationComponent
 		):void
 			{
 				this.business = business;
+				this.navigate_thanks();
+			}
+
+		businessRequestedNotificationForZipCode
+		():void
+			{
+
+			}
+
+		navigate_thanks
+		():void
+			{
+				this.router.navigate(
+					['/','creator']
+				);
 			}
 
 	}

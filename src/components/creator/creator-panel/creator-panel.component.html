@@ -1,4 +1,6 @@
-<section class="container">
+<section
+    class="container"
+>
     
     <form
         *ngIf = '!isLoading && !filterOptions.zipCode'
@@ -33,24 +35,33 @@
         *ngIf = 'isLoading'
     ></loading-list>
 
-    <b
+    <section
         *ngIf = '!isLoading && creatorList'
     >
-        {{creatorList.length}} results found
-    </b>
+        <b>
+            {{creatorList.length}} results found
+        </b>
 
-    <creator-list
-        *ngIf = '!isLoading && creatorList'
-        [creatorList]="creatorList"
-    ></creator-list>
+        <creator-list
+            [creatorList]="creatorList"
+        ></creator-list>
+    </section>
+
+    
 
     <div
-        *ngIf = '!isLoading && creatorList && creatorList.length == 0'
+        *ngIf = '!isLoading && filterOptions.zipCode && creatorList && creatorList.length == 0'
     >
         <p>
             Right now,we don't have any nano-influencers in your area.
         </p>
-        <business-request-notification></business-request-notification>
+        <business-request-notification
+            [zipcode]="filterOptions.zipCode"
+        ></business-request-notification>
+        
     </div>
 
+    <navigation-ribon
+        *ngIf = '!isLoading && filterOptions.zipCode'
+    ></navigation-ribon>
 </section>

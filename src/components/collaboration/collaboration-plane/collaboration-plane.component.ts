@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ErrorHelper } from 'src/helper/errorHelper';
 import { PackageService } from 'src/services/package/package.service';
 
 @Component(
@@ -21,7 +22,7 @@ export class CollaborationPlaneComponent
 			private route: ActivatedRoute,
 			private router: Router,
 			private packageService: PackageService,
-			// private errorHelper: ErrorHelper
+			private errorHelper: ErrorHelper	
 		){}
 
 		ngOnInit
@@ -46,7 +47,6 @@ export class CollaborationPlaneComponent
 								else
 									{
 										this.navigate_findCreatorByZipCode();
-										
 									}
 								
 							}
