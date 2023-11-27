@@ -7,9 +7,10 @@
 body {
   font-family: NunitoSans;
   margin: 0;
+  background-color: #FAFAFA;
 }
 
-body {
+body:has(.creator-filter) {
   background-image: linear-gradient(
     to right bottom,
     #9eda9e,
@@ -19,6 +20,10 @@ body {
     #d9d76d
   );
   min-height: 100vh;
+}
+
+body:has(.navigation-ribon){
+  padding-bottom: 60px;
 }
 
 @font-face {
