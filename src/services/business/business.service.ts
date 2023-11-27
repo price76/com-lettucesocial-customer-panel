@@ -13,6 +13,8 @@ export class BusinessService
 	{
 
 		private URL_BUSINESS_ADD: string = `${environment.API_URL}/business`;
+		private URL_BUSINESS_REQUEST_NOTIFCATION: string = `${environment.API_URL}/business/requestNotification`;
+		
 		constructor(
 			private httpInterceptor: HttpInterceptorService,
 		) { }
@@ -31,6 +33,26 @@ export class BusinessService
 				};
 				const result = await this.httpInterceptor.post(
 					this.URL_BUSINESS_ADD,
+					headers,
+					body
+				);
+
+				return result;
+			}
+
+		async requestNotification
+		(
+			businessId:string,
+			zipcode:number
+		):Promise<any>
+			{
+				let headers: HttpHeaders = new HttpHeaders();
+				let body: any = {
+					businessId:businessId,
+					zipcode: zipcode
+				};
+				const result = await this.httpInterceptor.post(
+					this.URL_BUSINESS_REQUEST_NOTIFCATION,
 					headers,
 					body
 				);

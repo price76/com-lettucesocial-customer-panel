@@ -50,6 +50,7 @@ export class CollaborationReceiptComponent implements OnInit
 									//Invalid data
 									//this.navigate_findCreatorByZipCode();
 									alert('invalid data')
+									this.errorHelper.showErrorAsAlert('invalid data');
 									
 								}
 							
@@ -66,15 +67,27 @@ export class CollaborationReceiptComponent implements OnInit
 					this.orderId
 				)
 					{
-						this.isLoading = true;
+						try
+							{
+								this.isLoading = true;
 
-						const data = await this.orderService.getOrderById(
-							this.orderId
-						);
-
-						this.order = data.order;
+								const data = await this.orderService.getOrderById(
+									this.orderId
+								);
+		
+								this.order = data.order;
+								
+								this.isLoading = false;
+							}
+						catch
+						(
+							error:any
+						)
+							{
+								this.isLoading = false;
+								this.errorHelper.showErrorAsAlert(error.mesage);
+							}
 						
-						this.isLoading = false;
 					}
 				
 			}
@@ -85,5 +98,30 @@ export class CollaborationReceiptComponent implements OnInit
 		):void
 			{
 				this.business = business;
+				this.assignBusinessToOrder();
+			}
+
+		async assignBusinessToOrder
+		():Promise<void>
+			{
+				try
+					{
+						this.isLoading = true;
+
+						const data = await this.orderService.assignBusinessToOrder(
+							this.order._id,
+							this.business._id
+						);
+
+						this.isLoading = false;
+					}
+				catch
+				(
+					error:any
+				)
+					{
+						this.isLoading = false;
+						this.errorHelper.showErrorAsAlert(error.mesage);
+					}
 			}
 	}

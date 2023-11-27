@@ -12,8 +12,9 @@ import { environment } from 'src/environments/environment.development';
 export class OrderService
 	{
 
-		private URL_BORDER_ADD: string = `${environment.API_URL}/order`;
+		private URL_ORDER_ADD: string = `${environment.API_URL}/order`;
 		private URL_ORDER_BY_ID: string = `${environment.API_URL}/order`;
+		private URL_ORDER_SET_BUSINESS: string = `${environment.API_URL}/order/setBusiness`;
 		
 
 		constructor(
@@ -32,7 +33,7 @@ export class OrderService
 					packageId: packageId
 				};
 				const result = await this.httpInterceptor.post(
-					this.URL_BORDER_ADD,
+					this.URL_ORDER_ADD,
 					headers,
 					body
 				);
@@ -52,6 +53,26 @@ export class OrderService
 				const result = await this.httpInterceptor.get(
 					url,
 					headers
+				);
+
+				return result;
+			}
+
+		async assignBusinessToOrder
+		(
+			orderId: string,
+			businessId: string,
+		):Promise<any>
+			{
+				let headers: HttpHeaders = new HttpHeaders();
+				let body: any = {
+					orderId: orderId,
+					businessId: businessId
+				};
+				const result = await this.httpInterceptor.post(
+					this.URL_ORDER_SET_BUSINESS,
+					headers,
+					body
 				);
 
 				return result;

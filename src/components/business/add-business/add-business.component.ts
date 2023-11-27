@@ -92,30 +92,30 @@ export class AddBusinessComponent
 				else
 					{
 						try
-						{
-	
-							this.isLoading = true;
-	
-							const data = await this.businessService.add(
-								this.business
-							);
-	
-							console.log(data.businessId);
-							this.business._id = data.businessId;
+							{
+		
+								this.isLoading = true;
+		
+								const data = await this.businessService.add(
+									this.business
+								);
+		
+								console.log(data.businessId);
+								this.business._id = data.businessId;
 
-							this.onBusinessAdded.emit(this.business);
-	
-							this.isLoading = false;
-	
-						}
-					catch
-					(
-						error:any
-					)
-						{
-							this.isLoading = false;
-							this.errorHelper.showErrorAsAlert(error);
-						}
+								this.onBusinessAdded.emit(this.business);
+		
+								this.isLoading = false;
+		
+							}
+						catch
+						(
+							error:any
+						)
+							{
+								this.isLoading = false;
+								this.errorHelper.showErrorAsAlert(error);
+							}
 					}
 			}
 	}

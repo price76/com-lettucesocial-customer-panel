@@ -37,6 +37,11 @@ ul {
       }
     }
     &:nth-child(2) {
+      display: flex;
+        align-items: center;
+        margin: 8px 0 0 0;
+    }
+    &:nth-child(3) {
       position: absolute;
       bottom: 100px;
       left: 25px;

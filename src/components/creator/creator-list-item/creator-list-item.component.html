@@ -25,6 +25,13 @@
         </a>
     </li>
     <li>
+        <b
+            *ngIf = "creator.city"
+        >
+            {{creator.city}}
+        </b>
+    </li>
+    <li>
         <a
             [routerLink]="['/','collabrotaion',creator._id,'selectPlane']"
         >
