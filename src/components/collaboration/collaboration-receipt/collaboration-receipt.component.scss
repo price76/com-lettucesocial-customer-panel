@@ -1,15 +1,18 @@
-
-#logo
-{
-  height: 70svh;
+logo{
+  margin-top: 20px;
+  height: 75px;
+  height: 75px;
+  display: flex;
 }
+
 #addBusiness {
   h1 {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 500;
     display: block;
     text-align: center;
     margin-bottom: 8px;
+    margin-top: 8px;
   }
   p {
     font-size: 14px;
@@ -61,17 +64,17 @@ add-business {
     text-transform: uppercase;
     text-align: center;
     position: relative;
-    &::before{
-          content: "";
-          background-image: url("../../../assets/images/icons/instagram-white.svg");
-          background-position: center;
-          background-repeat: no-repeat;
-          width: 25px;
-          height: 25px;
-          display: block;
-          background-size: contain;
-          position: absolute;
-          left: 15px;
+    &::before {
+      content: "";
+      background-image: url("../../../assets/images/icons/instagram-white.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+      display: block;
+      background-size: contain;
+      position: absolute;
+      left: 15px;
     }
   }
 }
