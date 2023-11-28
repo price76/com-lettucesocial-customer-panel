@@ -10,6 +10,10 @@ import { CreatorPanelComponent } from 'src/components/creator/creator-panel/crea
 
 export const routes: Routes = [
     {
+        path:'',
+        redirectTo:'creator'
+    },
+    {
         path:'creator',
         component: CreatorPanelComponent,
     },
