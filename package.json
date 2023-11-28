@@ -1,6 +1,6 @@
 {
   "name": "com-lettucesocial-customer-panel",
-  "version": "1.0.100",
+  "version": "1.0.110",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

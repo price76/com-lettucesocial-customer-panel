@@ -43,13 +43,12 @@ export class CollaborationReceiptComponent implements OnInit
 							)
 								{
 									this.orderId = orderIdParameter;
-									this.getOrderById();
+									//this.getOrderById();
 								}
 							else
 								{
 									//Invalid data
 									//this.navigate_findCreatorByZipCode();
-									alert('invalid data')
 									this.errorHelper.showErrorAsAlert('invalid data');
 									
 								}
