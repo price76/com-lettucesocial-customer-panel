@@ -25,17 +25,18 @@
         </a>
     </li>
     <li>
-        <b
-            *ngIf = "creator.city"
-        >
-            {{creator.city}}
-        </b>
-    </li>
-    <li>
         <a
             [routerLink]="['/','collabrotaion',creator._id,'selectPlane']"
         >
             Request Collaboration
         </a>
     </li>
+    <li>
+        <b
+            *ngIf = "creator.city"
+        >
+            {{creator.city}}
+        </b>
+    </li>
+
 </ul>
