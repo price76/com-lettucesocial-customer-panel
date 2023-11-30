@@ -44,6 +44,7 @@ export class CollaborationReceiptComponent implements OnInit
 								{
 									this.orderId = orderIdParameter;
 									//this.getOrderById();
+									this.notifyReturnFromStripe();
 								}
 							else
 								{
@@ -122,5 +123,35 @@ export class CollaborationReceiptComponent implements OnInit
 						this.isLoading = false;
 						this.errorHelper.showErrorAsAlert(error.mesage);
 					}
+			}
+
+		async notifyReturnFromStripe
+		():Promise<void>
+			{
+				if
+				(
+					this.orderId
+				)
+					{
+						try
+						{
+							this.isLoading = true;
+	
+							const data = await this.orderService.notifyReturnFromBank(
+								this.orderId
+							);
+	
+							this.isLoading = false;
+						}
+					catch
+					(
+						error:any
+					)
+						{
+							this.isLoading = false;
+							this.errorHelper.showErrorAsAlert(error.mesage);
+						}
+					}
+				
 			}
 	}
