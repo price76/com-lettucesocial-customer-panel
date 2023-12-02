@@ -21,7 +21,7 @@
             [href]="creator.instagramURL"
             target="_blank"
         >
-            Visit Instagram Pofile
+            @{{creator.instagramHandle}}
         </a>
     </li>
     <li>
@@ -35,7 +35,7 @@
         <b
             *ngIf = "creator.city"
         >
-            {{creator.city}}
+            {{creator.city}}, CA
         </b>
     </li>
 
