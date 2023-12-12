@@ -1,5 +1,6 @@
 
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ZipcodeHelper } from 'src/helper/zipcodeHelper';
 
 @Component(
 	{
@@ -16,6 +17,10 @@ export class CreatorFilterComponent
 		validationResult: any ={};
 		filterOptions:any = {}
 		zipCode!:string;
+
+		constructor(
+			private zipcodeHelper: ZipcodeHelper 
+		){}
 
 		validate
 		(
@@ -38,7 +43,14 @@ export class CreatorFilterComponent
 					}
 				else if
 				(
-					parseInt(zipCode) < 9999
+					zipCode.length != 5
+				)
+					{
+						validationResult.hasError = true;
+						validationResult.messageList.push("Incorrect input! Please retry.");
+					}
+				else if(
+					!this.zipcodeHelper.isValid(zipCode)
 				)
 					{
 						validationResult.hasError = true;

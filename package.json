@@ -1,12 +1,13 @@
 {
   "name": "com-lettucesocial-customer-panel",
-  "version": "1.0.140",
+  "version": "1.0.150",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration=production && npm run sentry:sourcemaps",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "deploy": "node deploy.js",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org lettucesocial --project com-lettucesocial-customer-panel ./dist/com-lettucesocial-customer-panel && sentry-cli sourcemaps upload --org lettucesocial --project com-lettucesocial-customer-panel ./dist/com-lettucesocial-customer-panel"
   },
   "private": true,
@@ -36,6 +37,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "ftp-deploy": "^2.4.5",
+    "dotenv": "^16.0.3"
   }
 }

@@ -12,12 +12,13 @@ body {
 
 body:has(.creator-filter) {
   background-image: linear-gradient(
-    to right bottom,
+    to bottom,
     #9eda9e,
     #aadb91,
     #b8da84,
-    #c8d978,
-    #d9d76d
+    #d1e674,
+    #d8f070,
+    #FDD54F
   );
   min-height: 100vh;
 }
