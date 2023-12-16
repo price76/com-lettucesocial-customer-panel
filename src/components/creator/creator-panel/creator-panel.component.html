@@ -39,8 +39,13 @@
     <section
         *ngIf = '!isLoading && filterOptions.zipCode && creatorList && creatorList.length != 0'
     >
+	<a
+		href="/creator"
+	>
+	Search in new zip code
+	</a>
         <b>
-            {{creatorList.length}} results found
+            {{creatorList.length}} results found in {{filterOptions.zipCode}}
         </b>
 
         <p class="find">
