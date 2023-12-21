@@ -1,5 +1,8 @@
-console.log('deploy ...');
-require('dotenv').config();
+require('dotenv').config(
+    {
+        path:'.env.deploy'
+    }
+);
 
 
 const USER = process.env.SERVER_USER;

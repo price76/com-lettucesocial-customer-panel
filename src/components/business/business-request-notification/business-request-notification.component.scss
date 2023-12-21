@@ -29,3 +29,27 @@
     }
   }
 }
+
+.search-zip {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #636363;
+  color: #636363;
+  border-radius: 22px;
+  margin-top: 32px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  &::before {
+    content: "";
+    background: url("../../../assets/images/icons/search.svg");
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 16px;
+    transform: rotate(80deg);
+  }
+}
