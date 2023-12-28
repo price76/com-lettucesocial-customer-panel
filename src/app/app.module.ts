@@ -31,6 +31,9 @@ import { BusinessRequestNotificationFinishedComponent } from '../components/busi
 import { NavigationRibonComponent } from '../components/share/navigation-ribon/navigation-ribon.component';
 
 
+import { GtagModule } from 'angular-gtag';
+
+
 @NgModule(
 	{
 		declarations: [
@@ -61,7 +64,8 @@ import { NavigationRibonComponent } from '../components/share/navigation-ribon/n
 			RouterModule,
 			AppRoutingModule,
 			FormsModule,
-			HttpClientModule
+			HttpClientModule,
+			GtagModule.forRoot({ trackingId: 'G-854YHJY62E', trackPageviews: true })
 		],
 		providers: [
 			{

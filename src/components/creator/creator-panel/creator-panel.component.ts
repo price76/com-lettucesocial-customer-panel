@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Gtag } from 'angular-gtag';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { CreatorService } from 'src/services/creator/creator.service';
 
@@ -20,7 +21,8 @@ export class CreatorPanelComponent
 		constructor
 		(
 			private creatorService: CreatorService,
-			private errorHelper:ErrorHelper
+			private errorHelper:ErrorHelper,
+			private gtag: Gtag
 		){}
 
 		setFilter
@@ -32,33 +34,32 @@ export class CreatorPanelComponent
 				console.log(this.filterOptions);
 
 				this.getAllCreatorByZipcode();
-				
-
-				// if
-				// (
-				// 	filterOptions.startDate &&
-				// 	filterOptions.endDate 
-				// )
-				// 	{
-				// 		this.selectedProject = filterOptions.project;
-				// 		this.getAllByProjectAndStartDateAndEndDate();
-				// 	}
-				// else
-				// 	{
-				// 		this.contractList = [];
-				// 	}
 			}
 
 		async getAllCreatorByZipcode
 		():Promise<void>
 			{
+				this.gtag.event(
+					'search',
+					{ 
+						search_term: this.filterOptions.zipCode.toString()
+					  }
+				);
+
 				try
 					{
 						this.isLoading = true;
 
 						const data = await this.creatorService.getAllCreatorByZipcode(
 							this.filterOptions.zipCode
-						)
+						);
+
+						this.gtag.event(
+							'view_search_results',
+							{ 
+								search_term: this.filterOptions.zipCode.toString()
+							}
+						);
 
 						this.creatorList = data.creatorList;
 						

@@ -43,7 +43,7 @@ export class CollaborationReceiptComponent implements OnInit
 							)
 								{
 									this.orderId = orderIdParameter;
-									//this.getOrderById();
+									this.getOrderById();
 									this.notifyReturnFromStripe();
 								}
 							else
@@ -76,6 +76,9 @@ export class CollaborationReceiptComponent implements OnInit
 								);
 		
 								this.order = data.order;
+
+								console.log(this.order);
+								
 								
 								this.isLoading = false;
 							}

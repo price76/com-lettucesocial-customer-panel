@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Gtag } from 'angular-gtag';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { OrderService } from 'src/services/order/order.service';
 import { PackageService } from 'src/services/package/package.service';
@@ -24,7 +25,8 @@ export class CollaborationInvoiceComponent implements OnInit
 			private orderService:OrderService,
 			private route: ActivatedRoute,
 			private router: Router,
-			private errorHelper: ErrorHelper
+			private errorHelper: ErrorHelper,
+			private gtag: Gtag
 		){}
 
 		ngOnInit(): void {
@@ -90,15 +92,43 @@ export class CollaborationInvoiceComponent implements OnInit
 					this.packageId
 				)
 					{
-						this.isLoading = true;
+						try
+							{
+								this.isLoading = true;
 
-						const data = await this.packageService.getAllPackageById(
-							this.packageId
-						);
+								const data = await this.packageService.getAllPackageById(
+									this.packageId
+								);
 
-						this.package = data.package;
+								this.package = data.package;
+
+								this.gtag.event(
+									'add_to_cart',
+									{ 
+										currency: "USD",
+										value: this.package.price,
+										items:[
+											{
+												item_id: `SKU_${this.package._id.toString()}`,
+												item_name: this.package.title,
+												item_variant: this.creatorId
+											}
+										]
+									}
+								);
+								
+								this.isLoading = false;
+							}
+						catch
+						(
+							error:any
+						)
+							{
+								this.isLoading = false;
+
+								this.errorHelper.showErrorAsAlert(error);
+							}
 						
-						this.isLoading = false;
 					}
 				
 			}
@@ -125,13 +155,28 @@ export class CollaborationInvoiceComponent implements OnInit
 							this.packageId,
 						);
 
+						this.gtag.event(
+							'begin_checkout',
+							{ 
+								currency: "USD",
+								value: this.package.price,
+								items:[
+									{
+										item_id: `SKU_${this.package._id.toString()}`,
+										item_name: this.package.title,
+										item_variant: this.creatorId
+									}
+								]
+							}
+						);
+
 						if
 						(
 							data.paymentUrl
 						)
 							{
 								let paymentUrl = data.paymentUrl;
-						
+								this.isLoading = false;
 								this.navigate_paymentFlow(paymentUrl);
 							}
 						else

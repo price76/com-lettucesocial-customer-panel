@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Gtag } from 'angular-gtag';
+import { ErrorHelper } from 'src/helper/errorHelper';
 import { CreatorService } from 'src/services/creator/creator.service';
 
 @Component(
@@ -21,7 +23,8 @@ export class RequestCollaborationComponent implements OnInit
 			private route: ActivatedRoute,
 			private router: Router,
 			private creatorService: CreatorService,
-			// private errorHelper: ErrorHelper
+			private errorHelper: ErrorHelper,
+			private gtag: Gtag
 		){}
 
 		ngOnInit
@@ -60,15 +63,37 @@ export class RequestCollaborationComponent implements OnInit
 		async getCreatorById
 		(): Promise<void>
 			{
-				this.isLoading = true;
+				try
+					{
+						this.isLoading = true;
 
-				const data = await this.creatorService.getCreatorById(
-					this.creatorId
-				);
+						const data = await this.creatorService.getCreatorById(
+							this.creatorId
+						);
 
-				this.creator = data.creator;
+						
+
+						this.creator = data.creator;
+
+						this.gtag.event(
+							'select_creator',
+							{ 
+								creator_id: this.creator.toString(),
+								creator_handle: this.creator.instagramHandle
+							}
+						);
+						
+						this.isLoading = false;
+					}
+				catch
+				(
+					error: any
+				)
+					{
+						this.isLoading = false;
+						this.errorHelper.showErrorAsAlert(error);
+					}
 				
-				this.isLoading = false;
 
 			}
 
