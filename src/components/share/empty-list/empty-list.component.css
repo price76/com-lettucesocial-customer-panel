@@ -13,7 +13,6 @@
     overflow: hidden;
   }
   .empty::before {
-    /* content: url("../../../assets/images/icons/empty.svg"); */
     margin-bottom: 24px;
   }
   

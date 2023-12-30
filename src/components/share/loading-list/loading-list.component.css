@@ -12,7 +12,7 @@
     width: auto;
   }
   .loadingList::before {
-    content: url("/assets/images/icons/empty.svg");
+    content: url("https://assets.lettucesocial.com/images/customer-panel/empty.svg");
     margin-bottom: 24px;
   }
   h2 {

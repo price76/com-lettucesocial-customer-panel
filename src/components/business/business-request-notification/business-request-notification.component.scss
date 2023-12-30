@@ -18,17 +18,17 @@
     font-size: 14px;
   }
 }
-.not-find {
-  p {
-    &:nth-child(2) {
-      margin-top: 16px;
-    }
-    &:nth-child(3){
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-  }
-}
+// .not-find {
+//   p {
+//     &:nth-child(3) {
+//       margin-top: 16px;
+//     }
+//     &:nth-child(4){
+//       font-weight: bold;
+//       margin-bottom: 16px;
+//     }
+//   }
+// }
 
 .search-zip {
   display: flex;
@@ -43,7 +43,7 @@
   box-sizing: border-box;
   &::before {
     content: "";
-    background: url("../../../assets/images/icons/search.svg");
+    background: url("https://assets.lettucesocial.com/images/customer-panel/search.svg");
     width: 25px;
     height: 25px;
     background-position: center;
