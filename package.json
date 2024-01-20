@@ -23,6 +23,7 @@
     "@sentry/angular-ivy": "^7.81.0",
     "@sentry/cli": "^2.21.5",
     "angular-gtag": "^1.0.4",
+    "ga-gtag": "^1.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
