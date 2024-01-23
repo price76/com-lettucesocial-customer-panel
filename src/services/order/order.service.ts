@@ -14,7 +14,6 @@ export class OrderService
 
 		private URL_ORDER_ADD: string = `${environment.API_URL}/order`;
 		private URL_ORDER_BY_ID: string = `${environment.API_URL}/order`;
-		private URL_ORDER_SET_BUSINESS: string = `${environment.API_URL}/order/setBusiness`;
 		private URL_ORDER_NOTIFY_RETURN_FROM_BANK: string = `${environment.API_URL}/order/notifyReturnFromBank`;
 		
 		
@@ -79,24 +78,4 @@ export class OrderService
 				return result;
 			}
 		
-
-		async assignBusinessToOrder
-		(
-			orderId: string,
-			businessId: string,
-		):Promise<any>
-			{
-				let headers: HttpHeaders = new HttpHeaders();
-				let body: any = {
-					orderId: orderId,
-					businessId: businessId
-				};
-				const result = await this.httpInterceptor.post(
-					this.URL_ORDER_SET_BUSINESS,
-					headers,
-					body
-				);
-
-				return result;
-			}
 	}

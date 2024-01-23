@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Gtag } from 'angular-gtag';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { OrderService } from 'src/services/order/order.service';
 
@@ -25,7 +26,8 @@ export class CollaborationReceiptComponent implements OnInit
 			private orderService:OrderService,
 			private route: ActivatedRoute,
 			private router: Router,
-			private errorHelper: ErrorHelper
+			private errorHelper: ErrorHelper,
+			private gtag: Gtag
 		){}
 
 		ngOnInit(): void {
@@ -95,38 +97,6 @@ export class CollaborationReceiptComponent implements OnInit
 				
 			}
 
-		onBusinessAdded
-		(
-			business:any
-		):void
-			{
-				this.business = business;
-				this.assignBusinessToOrder();
-			}
-
-		async assignBusinessToOrder
-		():Promise<void>
-			{
-				try
-					{
-						this.isLoading = true;
-
-						const data = await this.orderService.assignBusinessToOrder(
-							this.order._id,
-							this.business._id
-						);
-
-						this.isLoading = false;
-					}
-				catch
-				(
-					error:any
-				)
-					{
-						this.isLoading = false;
-						this.errorHelper.showErrorAsAlert(error.mesage);
-					}
-			}
 
 		async notifyReturnFromStripe
 		():Promise<void>
@@ -142,6 +112,22 @@ export class CollaborationReceiptComponent implements OnInit
 	
 							const data = await this.orderService.notifyReturnFromBank(
 								this.orderId
+							);
+
+							this.gtag.event(
+								'purchase',
+								{ 
+									currency: "USD",
+									transaction_id: this.order._id,
+									value: this.order.package.deposit,
+									items:[
+										{
+											item_id: `SKU_${this.order.package._id.toString()}`,
+											item_name: this.order.package.title,
+											item_variant: this.order.creator._id.toString()
+										}
+									]
+								}
 							);
 	
 							this.isLoading = false;
