@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Gtag } from 'angular-gtag';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { CreatorService } from 'src/services/creator/creator.service';
@@ -11,7 +12,7 @@ import { CreatorService } from 'src/services/creator/creator.service';
 	}
 )
 
-export class CreatorPanelComponent
+export class CreatorPanelComponent implements OnInit
 	{
 
 		creatorList!: any[];
@@ -20,10 +21,32 @@ export class CreatorPanelComponent
 
 		constructor
 		(
+			private route: ActivatedRoute,
 			private creatorService: CreatorService,
 			private errorHelper:ErrorHelper,
 			private gtag: Gtag
 		){}
+
+		ngOnInit
+		(): void
+			{
+				//this.route.params.subscribe(params => 
+				this.route.queryParams.subscribe(params => 
+					{
+						const zipcodeParameter = params['zipcode'];
+						if
+						(
+							zipcodeParameter
+						)
+							{
+								let filterOptions = {
+									zipCode:zipcodeParameter
+								}
+								this.setFilter(filterOptions)
+							}
+					}
+				);
+			}
 
 		setFilter
 		(
@@ -43,7 +66,7 @@ export class CreatorPanelComponent
 					'search',
 					{ 
 						search_term: this.filterOptions.zipCode.toString()
-					  }
+					}
 				);
 
 				try

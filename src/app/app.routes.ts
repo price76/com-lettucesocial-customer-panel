@@ -18,6 +18,10 @@ export const routes: Routes = [
         component: CreatorPanelComponent,
     },
     {
+        path:'creatorByZipcode',
+        component: CreatorPanelComponent,
+    },
+    {
         path:'collabrotaion/:crtrId',
         component: RequestCollaborationComponent,
         children:
@@ -40,6 +44,9 @@ export const routes: Routes = [
         path:'thanks',
         component: BusinessRequestNotificationFinishedComponent,
     },
-
+    {
+        path: '**',
+        redirectTo:'creator'
+    }
 
 ]

@@ -76,7 +76,6 @@ export class CreatorFilterComponent
 				else
 					{
 						this.filterOptions.zipCode = this.zipCode;
-						//this.filterText = `از ${this.filterOptions.startDateShamsi} تا ${this.filterOptions.endDateShamsi} برای ${this.filterOptions.project.title}` 
 						this.setFilter.emit(this.filterOptions);
 					}
 			}
