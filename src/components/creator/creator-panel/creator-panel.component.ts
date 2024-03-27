@@ -30,7 +30,6 @@ export class CreatorPanelComponent implements OnInit
 		ngOnInit
 		(): void
 			{
-				//this.route.params.subscribe(params => 
 				this.route.queryParams.subscribe(params => 
 					{
 						const zipcodeParameter = params['zipcode'];
@@ -42,6 +41,7 @@ export class CreatorPanelComponent implements OnInit
 								let filterOptions = {
 									zipCode:zipcodeParameter
 								}
+								
 								this.setFilter(filterOptions)
 							}
 					}
@@ -54,7 +54,6 @@ export class CreatorPanelComponent implements OnInit
 		):void
 			{
 				this.filterOptions = filterOptions;
-				console.log(this.filterOptions);
 
 				this.getAllCreatorByZipcode();
 			}
@@ -62,10 +61,12 @@ export class CreatorPanelComponent implements OnInit
 		async getAllCreatorByZipcode
 		():Promise<void>
 			{
+				const searchedZipcode:string = this.filterOptions.zipCode.toString()
+				
 				this.gtag.event(
 					'search',
 					{ 
-						search_term: this.filterOptions.zipCode.toString()
+						search_term: searchedZipcode
 					}
 				);
 
@@ -80,7 +81,7 @@ export class CreatorPanelComponent implements OnInit
 						this.gtag.event(
 							'view_search_results',
 							{ 
-								search_term: this.filterOptions.zipCode.toString()
+								search_term: searchedZipcode
 							}
 						);
 
