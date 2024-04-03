@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
+import { LoginComponent } from './auth/auth.module'
+
 import { CreatorListComponent } from '../components/creator/creator-list/creator-list.component';
 import { CreatorPanelComponent } from 'src/components/creator/creator-panel/creator-panel.component';
 import { CreatorListItemComponent } from '../components/creator/creator-list-item/creator-list-item.component';

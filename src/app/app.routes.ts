@@ -7,8 +7,13 @@ import { CollaborationReceiptComponent } from 'src/components/collaboration/coll
 import { RequestCollaborationComponent } from 'src/components/collaboration/request-collaboration/request-collaboration.component';
 
 import { CreatorPanelComponent } from 'src/components/creator/creator-panel/creator-panel.component';
+import { LoginComponent } from './auth/auth.module';
 
 export const routes: Routes = [
+    {
+        path:'login',
+        component: LoginComponent,
+    },
     {
         path:'',
         redirectTo:'creator'
