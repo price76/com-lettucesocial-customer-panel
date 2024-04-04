@@ -100,7 +100,6 @@ export class AddBusinessComponent
 									this.business
 								);
 		
-								console.log(data.businessId);
 								this.business._id = data.businessId;
 
 								this.onBusinessAdded.emit(this.business);

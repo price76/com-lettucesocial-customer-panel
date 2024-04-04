@@ -5,3 +5,62 @@
         login with Instagram
     </li>
 </ul>
+
+<form>
+    <legend>
+        Login
+    </legend>
+    <fieldset
+        [disabled]="isLoading"
+    >
+        <ul>
+            <li>
+                <label
+                    for="txtEmail"
+                >
+                    Email:
+                </label>
+                <input
+                    id="txtEmail"
+                    name="txtEmail"
+                    type="email"
+                    [(ngModel)]= "email"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtPassword"
+                >
+                    Password:
+                </label>
+                <input
+                    id="txtPassword"
+                    name="txtPassword"
+                    type="password"
+                    [(ngModel)]= "password"
+                >
+            </li>
+        </ul>
+        <ul>
+            <loading
+                *ngIf="isLoading"
+            ></loading>
+
+            <validation-result
+                *ngIf="validationResult.hasError"
+                [validationResult]="validationResult"
+                class="validation-result"
+            ></validation-result>
+
+            <li>
+                <button
+                    type="button"
+                    role="button"
+                    (click)="login()"
+                >
+                    Login
+                </button>
+            </li>
+        </ul>
+    </fieldset>
+</form>
