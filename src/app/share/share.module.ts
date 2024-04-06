@@ -5,13 +5,14 @@ import { ValidationResultComponent } from './components/validation-result/valida
 import { LoadingComponent } from './components/loading/loading.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { LogoTypeComponent } from './components/logo-type/logo-type.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     ValidationResultComponent,
     LoadingComponent,
     LogoComponent,
-    LogoTypeComponent
+    LogoTypeComponent,
   ],
   imports: [
     CommonModule
@@ -20,7 +21,8 @@ import { LogoTypeComponent } from './components/logo-type/logo-type.component';
     ValidationResultComponent,
     LoadingComponent,
     LogoComponent,
-    LogoTypeComponent
+    LogoTypeComponent,
+    HttpClientModule
   ]
 })
 export class ShareModule { }

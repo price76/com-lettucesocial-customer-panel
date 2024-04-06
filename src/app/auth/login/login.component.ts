@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BusinessService } from '../services/business/business.service';
+import { Router } from '@angular/router';
 
 @Component(
 	{
@@ -13,7 +14,8 @@ export class LoginComponent
 	{
 		constructor
 		(
-			private businessService: BusinessService
+			private businessService: BusinessService,
+			private router: Router
 		){}
 
 		email!:string;
@@ -83,6 +85,10 @@ export class LoginComponent
 		
 								let token = data.token;
 
+								this.storeTokenToLocalStorage(token);
+								this.navigateToSearchPage();
+
+
 								this.isLoading = false;
 							}
 						catch
@@ -90,8 +96,48 @@ export class LoginComponent
 							error:any
 						)
 							{
-								
+								this.isLoading = false;
+								if
+								(
+									error.status == 0
+								)
+									{
+										this.validationResult.hasError = true;
+										this.validationResult.messageList.push("Check internet connection.");
+										
+									}
+								else
+									{
+										if
+										(
+											error.error &&
+											error.error.message
+										)
+											{
+												this.validationResult.hasError = true;
+												this.validationResult.messageList.push(error.error.message);
+												//alert(error.error.message);
+											}
+										else
+											{
+												alert(error)
+											}
+									}
 							}
 					}
 			}
+
+			storeTokenToLocalStorage
+			(
+				token: string
+			):void
+				{
+					localStorage.setItem("TOKEN",token);
+				}
+
+			navigateToSearchPage
+			():void
+				{
+					this.router.navigate(['company']);
+				}
 	}

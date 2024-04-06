@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Gtag } from 'angular-gtag';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { CreatorService } from 'src/services/creator/creator.service';
+import { LocalStorageService } from 'src/services/localstorage/local-storage.service';
 
 @Component(
 	{
@@ -24,7 +25,8 @@ export class CreatorPanelComponent implements OnInit
 			private route: ActivatedRoute,
 			private creatorService: CreatorService,
 			private errorHelper:ErrorHelper,
-			private gtag: Gtag
+			private gtag: Gtag,
+			private localStorageService: LocalStorageService
 		){}
 
 		ngOnInit
@@ -61,12 +63,13 @@ export class CreatorPanelComponent implements OnInit
 		async getAllCreatorByZipcode
 		():Promise<void>
 			{
-				const searchedZipcode:string = this.filterOptions.zipCode.toString()
+				const searchedZipcode:number = this.filterOptions.zipCode;
+				const searchedZipcodeString:string = this.filterOptions.zipCode.toString();
 				
 				this.gtag.event(
 					'search',
 					{ 
-						search_term: searchedZipcode
+						search_term: searchedZipcodeString
 					}
 				);
 
@@ -75,17 +78,19 @@ export class CreatorPanelComponent implements OnInit
 						this.isLoading = true;
 
 						const data = await this.creatorService.getAllCreatorByZipcode(
-							this.filterOptions.zipCode
+							searchedZipcode
 						);
 
 						this.gtag.event(
 							'view_search_results',
 							{ 
-								search_term: searchedZipcode
+								search_term: searchedZipcodeString
 							}
 						);
 
 						this.creatorList = data.creatorList;
+
+						this.storeSearchedZipCodeInLocalStorage(searchedZipcode);
 						
 						this.isLoading = false;
 					}
@@ -98,6 +103,14 @@ export class CreatorPanelComponent implements OnInit
 						this.errorHelper.showErrorAsAlert(error);
 					}
 			}
+
+			storeSearchedZipCodeInLocalStorage
+			(
+				searchedZipcode: number
+			)
+				{
+					this.localStorageService.addZipCodeToList(searchedZipcode);
+				}
 
 		
 	}
