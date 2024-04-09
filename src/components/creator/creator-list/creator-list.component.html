@@ -4,7 +4,13 @@
         class="contract-list-item"
     >
         <creator-list-item
+            *ngIf="creator.isPublic"
             [creator]="creator"
         ></creator-list-item>
+
+        <limited-creator-list-item
+            *ngIf="!creator.isPublic"
+            [creator]="creator"
+        ></limited-creator-list-item>
     </li>
 </ol>

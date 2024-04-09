@@ -1,3 +1,8 @@
+.blur {
+  color: transparent;
+  text-shadow: 0 0 5px #000;
+}
+
 dl {
   dt {
     display: none;
@@ -13,13 +18,15 @@ dl {
   }
 }
 
+
+
 ul {
   li {
     a {
       color: #000;
       font-size: 14px;
     }
-    &:nth-child(1) {
+    &:nth-child(2) {
       a {
         display: flex;
         align-items: center;
@@ -40,7 +47,7 @@ ul {
       display: flex;
       align-items: center;
       margin: 8px 0 0 0;
-      b{
+      a,b{
         color: #000;
         font-size: 14px;
         display: flex;
@@ -60,7 +67,7 @@ ul {
         }
       }
     }
-    &:nth-child(2) {
+    &:nth-child(1) {
       position: absolute;
       bottom: 135px;
       left: 25px;

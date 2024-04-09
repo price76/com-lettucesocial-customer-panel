@@ -33,6 +33,8 @@ import { NavigationRibonComponent } from '../components/share/navigation-ribon/n
 import { GtagModule } from 'angular-gtag';
 
 import { ShareModule } from './share/share.module';
+import { LimitedCreatorListItemComponent } from 'src/components/creator/limited-creator-list-item/limited-creator-list-item.component';
+
 
 
 @NgModule(
@@ -54,7 +56,8 @@ import { ShareModule } from './share/share.module';
 			AddBusinessComponent,
 			CollaborationReceiptComponent,
    BusinessRequestNotificationFinishedComponent,
-   NavigationRibonComponent
+   NavigationRibonComponent,
+   LimitedCreatorListItemComponent
 		],
 		imports: [
 			ShareModule,

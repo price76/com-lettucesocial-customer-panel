@@ -18,25 +18,29 @@
 <ul>
     <li>
         <a
+            [routerLink]="['/','collabrotaion',creator._id,'selectPlane']"
+        >
+            Request Collaboration
+        </a>
+    </li>
+
+    <li>
+        <a
             [href]="creator.instagramURL"
             target="_blank"
         >
             @{{creator.instagramHandle}}
         </a>
     </li>
-    <li>
-        <a
-            [routerLink]="['/','collabrotaion',creator._id,'selectPlane']"
-        >
-            Request Collaboration
-        </a>
-    </li>
+    
     <li>
         <b
             *ngIf = "creator.city"
         >
             {{creator.city}}, CA
         </b>
-    </li>
+    </li> 
+
+
 
 </ul>
