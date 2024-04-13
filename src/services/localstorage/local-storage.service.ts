@@ -57,4 +57,21 @@ export class LocalStorageService
 					}
 				
 			}
+
+		getToken
+		():string
+			{
+				let token = localStorage.getItem("TOKEN");
+				if
+				(
+					token
+				)
+					{
+						return token
+					}
+				else
+					{
+						return ""
+					}
+			}
 	}

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from '../localstorage/local-storage.service';
 
 @Injectable(
 	{
@@ -12,7 +13,31 @@ export class HttpInterceptorService
 
 		constructor(
 			private http: HttpClient,
+			private localStorageService: LocalStorageService
 		){}
+
+		injectTokenToHeader
+		(
+			headers: HttpHeaders
+		):HttpHeaders
+			{
+				console.log("what?");
+				
+				const token = this.localStorageService.getToken();
+				if(
+					token &&
+					token != ""
+				)
+					{
+						let extendedHeader:HttpHeaders = headers.append("token",token);
+						return extendedHeader;
+					}
+				else
+					{
+						return headers;
+					}
+				
+			}
 
 		async post
 		(
@@ -21,11 +46,12 @@ export class HttpInterceptorService
 			body: any
 		):Promise<any>
 			{
+				let newHeder: HttpHeaders = this.injectTokenToHeader(headers);
 				const result = await  this.http
 					.post(
 						url,
 						body,
-						{ headers: headers }
+						{ headers: newHeder }
 					).toPromise();
 				
 				return result;
@@ -33,13 +59,15 @@ export class HttpInterceptorService
 
 		async get
 		(
-			url: string, headers: HttpHeaders
+			url: string,
+			headers: HttpHeaders
 		):Promise<any>
 			{
+				let newHeder: HttpHeaders = this.injectTokenToHeader(headers);
 				const result = await this.http
 					.get(url,
 						{
-							headers: headers
+							headers: newHeder
 						}
 					).toPromise();
 

@@ -47,18 +47,12 @@
     </li>
     
     <li>
-        <a
-            href="/login"
-            title="signup or signin for more details"
+        <b
+            *ngIf = "creator.city"
         >
-            <i
-            class = "blur"
-            >
-                signup/signin
-            </i>
-        
-        </a>
-    </li>
+            {{creator.city}}, CA
+        </b>
+    </li> 
 
 
 
