@@ -11,7 +11,9 @@
             Let’s match you
             with a local nano-influencer
         </legend>
-        <ul>
+        <ul
+            *ngIf="!hasReachedSearchLimit()"
+        >
             <li>
                 <label 
                     for="cmpFilterCreator"
@@ -25,6 +27,25 @@
                 ></creator-filter>
             </li>
         </ul>
+        <section
+            id="secSearchLimitReached"
+            *ngIf="hasReachedSearchLimit()"
+        >
+            You've reached your search limit.
+            <br>
+            <a
+                href="login"
+            >
+                Sign up
+            </a>
+             or 
+            <a
+                href="login"
+            >
+                login
+            </a>
+             to continue exploring!
+        </section>
     </form>
 
     <div

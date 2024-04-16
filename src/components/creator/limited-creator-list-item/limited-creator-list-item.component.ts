@@ -15,9 +15,7 @@ export class LimitedCreatorListItemComponent
 		getCreatorImageUrl
 		():string
 			{
-				const instagramHandleLoweCase = this.creator.instagramHandle.toLowerCase();
-				const renamedInstagramHandleLoweCase = instagramHandleLoweCase.replace(/\./g, '_');
-				const url = `https://assets.lettucesocial.com/images/creators/${renamedInstagramHandleLoweCase}.png`;
+				const url = `https://assets.lettucesocial.com/images/creators2/${this.creator.profilePicture}`;
 				return url;
 			}
 }

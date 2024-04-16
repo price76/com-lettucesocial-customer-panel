@@ -1,0 +1,108 @@
+<form>
+    <legend>
+        Add Business
+    </legend>
+
+    <fieldset
+        [disabled]="isLoading"
+    >
+        <ul>
+            <li>
+                <label
+                    for="txtOwnerTitle"
+                >
+                    NAME
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter first and last name"
+                    maxlength="200"
+                    [(ngModel)]= "business.ownerTitle"
+                    id="txtOwnerTitle"
+                    name="txtOwnerTitle"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtEmail"
+                >
+                    EMAIL
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your email"
+                    maxlength="200"
+                    [(ngModel)]= "business.email"
+                    id="txtEmail"
+                    name="txtEmail"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtMobile"
+                >
+                    MOBILE
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your mobile number"
+                    maxlength="200"
+                    [(ngModel)]= "business.mobile"
+                    id="txtMobile"
+                    name="txtMobile"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtBusinessName"
+                >
+                    BUSINESS NAME
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your business name"
+                    maxlength="200"
+                    [(ngModel)]= "business.businessName"
+                    id="txtBusinessName"
+                    name="txtBusinessName"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtPassword"
+                >
+                    PASSWORD
+                </label>
+                <input
+                    type="password"
+                    placeholder="Enter your password"
+                    maxlength="200"
+                    [(ngModel)]= "business.password"
+                    id="txtPassword"
+                    name="txtPassword"
+                >
+            </li>
+        </ul>
+        <ul>
+            <loading
+                *ngIf="isLoading"
+            ></loading>
+
+            <validation-result
+                *ngIf="validationResult.hasError"
+                [validationResult]="validationResult"
+                class="validation-result"
+            ></validation-result>
+            
+            <li>
+                <button
+                    type="button"
+                    (click)="signup()"
+                >
+                    Submit
+                </button>
+            </li>
+        </ul>
+    </fieldset>
+    
+</form>

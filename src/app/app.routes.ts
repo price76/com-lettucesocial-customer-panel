@@ -8,11 +8,16 @@ import { RequestCollaborationComponent } from 'src/components/collaboration/requ
 
 import { CreatorPanelComponent } from 'src/components/creator/creator-panel/creator-panel.component';
 import { LoginComponent } from './auth/auth.module';
+import { SignupComponent } from './auth/signup/signup.component';
 
 export const routes: Routes = [
     {
         path:'login',
         component: LoginComponent,
+    },
+    {
+        path:'signup',
+        component: SignupComponent,
     },
     {
         path:'',

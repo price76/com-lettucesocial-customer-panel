@@ -112,5 +112,34 @@ export class CreatorPanelComponent implements OnInit
 					this.localStorageService.addZipCodeToList(searchedZipcode);
 				}
 
+			hasReachedSearchLimit
+			():boolean
+				{
+					const searchedZipCodeList:number[] = this.localStorageService.getZipCodeList();
+					if
+					(
+						searchedZipCodeList
+					)
+						{
+							const searchedZopCodeListCount:number = searchedZipCodeList.length;
+							if
+							(
+								searchedZopCodeListCount >= 3
+							)
+								{
+									return true;
+								}
+							else
+								{
+									return false;
+								}
+						}
+					else
+						{
+							return false;
+						}
+					
+				}
+
 		
 	}

@@ -18,16 +18,39 @@
     <dt>
         Title
     </dt>
-    <dd>
+    <dd
+        *ngIf="creator.firstName"
+    >
         
         {{getCreatorTitle()}}
+    </dd>
+    <dd
+        *ngIf="!creator.firstName"
+    >
+        <i
+            class = "blur"
+        >
+            signup/signin
+        </i>
     </dd>
 
     <dt>
         Instagram Handle
     </dt>
-    <dd>
+    <dd
+        *ngIf="creator.instagramHandle"
+    >
         @{{creator.instagramHandle}}
+    </dd>
+
+    <dd
+        *ngIf="!creator.instagramHandle"
+    >
+        <i
+            class = "blur"
+        >
+            signup/signin
+        </i>
     </dd>
 </dl>
 

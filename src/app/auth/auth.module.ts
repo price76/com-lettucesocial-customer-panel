@@ -4,11 +4,13 @@ import { LoginComponent } from './login/login.component';
 
 import { ShareModule } from '../share/share.module';
 import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
