@@ -74,4 +74,9 @@ export class LocalStorageService
 						return ""
 					}
 			}
+
+		logout():void
+			{
+				localStorage.clear();
+			}
 	}

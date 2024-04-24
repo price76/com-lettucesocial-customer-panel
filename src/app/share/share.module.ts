@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ValidationResultComponent } from './components/validation-result/validation-result.component';
@@ -23,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     LogoComponent,
     LogoTypeComponent,
     HttpClientModule
+  ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class ShareModule { }

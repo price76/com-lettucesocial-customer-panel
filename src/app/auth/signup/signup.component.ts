@@ -34,15 +34,6 @@ export class SignupComponent
 
 				if
 				(
-					!business.ownerTitle
-				)
-					{
-						validationResult.hasError = true;
-						validationResult.messageList.push("Enter First Name and Last Name.");
-					}
-
-				if
-				(
 					!business.email
 				)
 					{
@@ -50,23 +41,6 @@ export class SignupComponent
 						validationResult.messageList.push("Enter Email.");
 					}
 
-				if
-				(
-					!business.mobile
-				)
-					{
-						validationResult.hasError = true;
-						validationResult.messageList.push("Enter Mobile Number.");
-					}
-
-				if
-				(
-					!business.businessName
-				)
-					{
-						validationResult.hasError = true;
-						validationResult.messageList.push("Enter Business Name.");
-					}
 
 				if
 				(
@@ -106,9 +80,6 @@ export class SignupComponent
 								this.isLoading = true;
 		
 								const data: any = await this.businessService.signup(
-									this.business.businessName,
-									this.business.mobile,
-									this.business.ownerTitle,
 									this.business.email,
 									this.business.password
 								)
@@ -116,7 +87,7 @@ export class SignupComponent
 								let token = data.token;
 
 								
-								this.navigateToLoginPage();
+								this.navigateTo_confirmEmail();
 
 
 								this.isLoading = false;
@@ -157,9 +128,9 @@ export class SignupComponent
 					}
 			}
 
-			navigateToLoginPage
+			navigateTo_confirmEmail
 			():void
 				{
-					this.router.navigate(['login']);
+					this.router.navigate(['/','auth','confirmEmail']);
 				}
 	}

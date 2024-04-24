@@ -12,7 +12,9 @@ export class BusinessService
 	{
 
 		private URL_BUSINESS_LOGIN: string = `${environment.API_URL}/business/login`;
+		private URL_BUSINESS_LOGIN_WITH_FACEBOOK: string = `${environment.API_URL}/business/loginWithFacebook`;
 		private URL_BUSINESS_SIGNUP: string = `${environment.API_URL}/business/signup`;
+		
 
 		constructor(
 			private http: HttpClient,
@@ -38,18 +40,12 @@ export class BusinessService
 			}
 
 		async signup(
-			businessName:string,
-			mobile:string,
-			ownerTitle:string,
 			email:string,
 			password:string
 		):Promise<any>
 			{
 				let headers: HttpHeaders = new HttpHeaders();
 				let body: any = {
-					businessName: businessName,
-					mobile: mobile,
-					ownerTitle: ownerTitle,
 					email: email,
 					password: password
 				};
@@ -62,6 +58,23 @@ export class BusinessService
 				return result;
 			}
 
+		async loginWithFacebook
+		(
+			accessToken:string,
+		):Promise<any>
+			{
+				let headers: HttpHeaders = new HttpHeaders();
+				let body: any = {
+					accessToken: accessToken
+				};
+				const result = await this.post(
+					this.URL_BUSINESS_LOGIN_WITH_FACEBOOK,
+					headers,
+					body
+				);
+
+				return result;
+			}
 			
 	
 		async post

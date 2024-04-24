@@ -10,7 +10,9 @@ import { CreatorFilterComponent } from '../components/creator/creator-filter/cre
 import { LoadingListComponent } from '../components/share/loading-list/loading-list.component';
 
 import { Router, RouterModule } from '@angular/router';
+
 import { AppRoutingModule } from './app-routing.module';
+
 import { FormsModule } from '@angular/forms';
 import { EmptyListComponent } from 'src/components/share/empty-list/empty-list.component';
 
@@ -34,6 +36,12 @@ import { GtagModule } from 'angular-gtag';
 
 import { ShareModule } from './share/share.module';
 import { LimitedCreatorListItemComponent } from 'src/components/creator/limited-creator-list-item/limited-creator-list-item.component';
+import { EditProfileComponent } from '../components/business/edit-profile/edit-profile.component';
+import { BusinessMenuComponent } from '../components/business/business-menu/business-menu.component';
+import { EmailConfirmedComponent } from '../components/business/email-confirmed/email-confirmed.component';
+import { HomeComponent } from '../components/business/home/home.component';
+
+
 
 
 
@@ -57,7 +65,12 @@ import { LimitedCreatorListItemComponent } from 'src/components/creator/limited-
 			CollaborationReceiptComponent,
    BusinessRequestNotificationFinishedComponent,
    NavigationRibonComponent,
-   LimitedCreatorListItemComponent
+   LimitedCreatorListItemComponent,
+   EditProfileComponent,
+   BusinessMenuComponent,
+   EmailConfirmedComponent,
+   HomeComponent
+   
 		],
 		imports: [
 			ShareModule,

@@ -4,12 +4,12 @@
         class="contract-list-item"
     >
         <creator-list-item
-            *ngIf="creator.isPublic"
+            *ngIf="creator.instagramHandle"
             [creator]="creator"
         ></creator-list-item>
 
         <limited-creator-list-item
-            *ngIf="!creator.isPublic"
+            *ngIf="!creator.instagramHandle"
             [creator]="creator"
         ></limited-creator-list-item>
     </li>

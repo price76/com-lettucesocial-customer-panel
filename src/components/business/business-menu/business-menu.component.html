@@ -1,0 +1,33 @@
+<details
+    *ngIf="business.businessName"
+>
+    <summary>
+        {{business.businessName}}
+    </summary>
+    <ul>
+        <li>
+            <a 
+                routerLink="/editProfile"
+            >
+                Edit Profile
+            </a>
+            
+        </li>
+        <li>
+            <a 
+                routerLink="/creator"
+            >
+                Search
+            </a>
+        </li>
+        <li>
+            <button
+                type="button"
+                role="button"
+                (click)="logout()"
+            >
+                Logout
+            </button>
+        </li>
+    </ul>
+</details>

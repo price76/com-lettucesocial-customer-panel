@@ -9,20 +9,40 @@ import { RequestCollaborationComponent } from 'src/components/collaboration/requ
 import { CreatorPanelComponent } from 'src/components/creator/creator-panel/creator-panel.component';
 import { LoginComponent } from './auth/auth.module';
 import { SignupComponent } from './auth/signup/signup.component';
+import { EditProfileComponent } from 'src/components/business/edit-profile/edit-profile.component';
+import { EmailConfirmedComponent } from 'src/components/business/email-confirmed/email-confirmed.component';
+import { HomeComponent } from 'src/components/business/home/home.component';
+import { ConfirmEmailComponent } from 'src/app/auth/confirm-email/confirm-email.component';
+import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
 
 export const routes: Routes = [
     {
-        path:'login',
-        component: LoginComponent,
-    },
-    {
-        path:'signup',
-        component: SignupComponent,
-    },
-    {
         path:'',
-        redirectTo:'creator'
+        component: HomeComponent,
     },
+    {
+        path:'auth',
+        component:AuthHomeComponent,
+        children:[
+            {
+                path:'login',
+                component: LoginComponent,
+            },
+            {
+                path:'signup',
+                component: SignupComponent,
+            },
+            {
+                path:'confirmEmail',
+                component: ConfirmEmailComponent,
+            },
+        ]
+    },
+    {
+        path:'editProfile',
+        component: EditProfileComponent,
+    },
+    
     {
         path:'creator',
         component: CreatorPanelComponent,
@@ -53,6 +73,10 @@ export const routes: Routes = [
     {
         path:'thanks',
         component: BusinessRequestNotificationFinishedComponent,
+    },
+    {
+        path:'emailConfirmed',
+        component: EmailConfirmedComponent,
     },
     {
         path: '**',

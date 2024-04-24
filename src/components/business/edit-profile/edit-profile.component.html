@@ -1,0 +1,141 @@
+<business-menu></business-menu>
+<form>
+    <legend>
+        Create your profile
+    </legend>
+
+    <fieldset
+        [disabled]="isLoading"
+    >
+        <ul>
+            <li>
+                <label
+                    for="txtOwnerFirstName"
+                >
+                    FIRST NAME
+                </label>
+                <input
+                    type="text"
+                    placeholder="First Name"
+                    maxlength="200"
+                    [(ngModel)]= "business.ownerFirstName"
+                    id="txtOwnerFirstName"
+                    name="txtOwnerFirstName"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtOwnerLastName"
+                >
+                    LAST NAME
+                </label>
+                <input
+                    type="text"
+                    placeholder="Last Name"
+                    maxlength="200"
+                    [(ngModel)]= "business.ownerLastName"
+                    id="txtOwnerLastName"
+                    name="txtOwnerLastName"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtMobile"
+                >
+                    MOBILE
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your mobile number"
+                    maxlength="200"
+                    [(ngModel)]= "business.mobile"
+                    id="txtMobile"
+                    name="txtMobile"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtBusinessName"
+                >
+                    BUSINESS NAME
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your business name"
+                    maxlength="200"
+                    [(ngModel)]= "business.businessName"
+                    id="txtBusinessName"
+                    name="txtBusinessName"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtCity"
+                >
+                    CITY
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your city"
+                    maxlength="200"
+                    [(ngModel)]= "business.city"
+                    id="txtCity"
+                    name="txtCity"
+                >
+            </li>
+            <li>
+                <label
+                    for="txtZipcode"
+                >
+                    ZIP CODE
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter your zip code"
+                    maxlength="5"
+                    [(ngModel)]= "business.zipcode"
+                    id="txtZipcode"
+                    name="txtZipcode"
+                >
+            </li>
+            
+            <li>
+                <label
+                    for="txtBusinessInstagramHandle"
+                >
+                    YOUR BUSINESS INSTAGRAM
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter business Instagram handle"
+                    maxlength="200"
+                    [(ngModel)]= "business.businessInstagramHandle"
+                    id="txtBusinessInstagramHandle"
+                    name="txtBusinessInstagramHandle"
+                >
+            </li>
+            
+        </ul>
+        <ul>
+            <loading
+                *ngIf="isLoading"
+            ></loading>
+
+            <validation-result
+                *ngIf="validationResult.hasError"
+                [validationResult]="validationResult"
+                class="validation-result"
+            ></validation-result>
+            
+            <li>
+                <button
+                    type="button"
+                    (click)="save()"
+                >
+                    Submit
+                </button>
+            </li>
+        </ul>
+    </fieldset>
+    
+</form>
