@@ -40,6 +40,10 @@ import { EditProfileComponent } from '../components/business/edit-profile/edit-p
 import { BusinessMenuComponent } from '../components/business/business-menu/business-menu.component';
 import { EmailConfirmedComponent } from '../components/business/email-confirmed/email-confirmed.component';
 import { HomeComponent } from '../components/business/home/home.component';
+import { SearchedZipCodeListItemComponent } from '../components/zipcode/searched-zip-code/searched-zip-code-list-item/searched-zip-code-list-item.component';
+import { SearchedZipCodeListComponent } from 'src/components/zipcode/searched-zip-code/searched-zip-code-list/searched-zip-code-list.component';
+import { SearchedZipCodePanelComponent } from '../components/zipcode/searched-zip-code/searched-zip-code-panel/searched-zip-code-panel.component';
+import { SearchLimitReachedComponent } from '../components/business/search-limit-reached/search-limit-reached.component';
 
 
 
@@ -69,7 +73,11 @@ import { HomeComponent } from '../components/business/home/home.component';
    EditProfileComponent,
    BusinessMenuComponent,
    EmailConfirmedComponent,
-   HomeComponent
+   HomeComponent,
+   SearchedZipCodeListComponent,
+   SearchedZipCodeListItemComponent,
+   SearchedZipCodePanelComponent,
+   SearchLimitReachedComponent
    
 		],
 		imports: [

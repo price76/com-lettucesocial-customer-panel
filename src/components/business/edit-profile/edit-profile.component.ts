@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ErrorHelper } from 'src/helper/errorHelper';
 import { BusinessService } from 'src/services/business/business.service';
+import { LocalStorageService } from 'src/services/localstorage/local-storage.service';
 
 @Component(
 	{
@@ -21,7 +22,8 @@ export class EditProfileComponent implements OnInit
 		(
 			private businessService:BusinessService,
 			private errorHelper:ErrorHelper,
-			private router: Router
+			private router: Router,
+			private localStorageService: LocalStorageService
 		){}
 
 		ngOnInit(): void {
@@ -120,6 +122,8 @@ export class EditProfileComponent implements OnInit
 								const data = await this.businessService.get();
 
 								this.business = data.business;
+
+								this.localStorageService.updateBusinessInfo(this.business);
 		
 								this.isLoading = false;
 		

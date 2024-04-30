@@ -19,6 +19,7 @@ export class CreatorPanelComponent implements OnInit
 		creatorList!: any[];
 		filterOptions: any ={};
 		isLoading:boolean = false;
+		businessName:string="";
 
 		constructor
 		(
@@ -32,6 +33,9 @@ export class CreatorPanelComponent implements OnInit
 		ngOnInit
 		(): void
 			{
+
+				this.businessName = this.localStorageService.getBusinessName();
+
 				this.route.queryParams.subscribe(params => 
 					{
 						const zipcodeParameter = params['zipcode'];
@@ -63,7 +67,7 @@ export class CreatorPanelComponent implements OnInit
 		async getAllCreatorByZipcode
 		():Promise<void>
 			{
-				const searchedZipcode:number = this.filterOptions.zipCode;
+				const searchedZipcode:string = this.filterOptions.zipCode;
 				const searchedZipcodeString:string = this.filterOptions.zipCode.toString();
 				
 				this.gtag.event(
@@ -104,42 +108,72 @@ export class CreatorPanelComponent implements OnInit
 					}
 			}
 
-			storeSearchedZipCodeInLocalStorage
-			(
-				searchedZipcode: number
-			)
-				{
-					this.localStorageService.addZipCodeToList(searchedZipcode);
-				}
+		storeSearchedZipCodeInLocalStorage
+		(
+			searchedZipcode: string
+		)
+			{
+				this.localStorageService.addZipCodeToList(searchedZipcode);
+			}
 
-			hasReachedSearchLimit
-			():boolean
-				{
-					const searchedZipCodeList:number[] = this.localStorageService.getZipCodeList();
-					if
-					(
-						searchedZipCodeList
-					)
-						{
-							const searchedZopCodeListCount:number = searchedZipCodeList.length;
-							if
-							(
-								searchedZopCodeListCount >= 3
-							)
-								{
-									return true;
-								}
-							else
-								{
-									return false;
-								}
-						}
-					else
-						{
-							return false;
-						}
-					
-				}
+		hasReachedSearchLimit
+		():boolean
+			{
+				const isApproved: boolean = this.localStorageService.getIsApproved();
+				if
+				(
+					isApproved
+				)
+					{
+						return false;
+					}
+				else
+					{
+						const searchedZipCodeList:string[] = this.localStorageService.getZipCodeList();
+	
+						if
+						(
+							searchedZipCodeList
+						)
+							{
+								const token: string = this.localStorageService.getToken();
+
+								const searchedZopCodeListCount:number = searchedZipCodeList.length;
+
+								if
+								(
+										(
+											token &&
+											token != "" &&
+											searchedZopCodeListCount >= 5
+										)
+									||
+										(
+											(
+												!token ||
+												token == "" 
+											)
+											&&
+											searchedZopCodeListCount >= 3
+										)
+									
+								)
+									{
+										return true;
+									}
+								else
+									{
+										return false;
+									}
+							}
+						else
+							{
+								return false;
+							}
+					}
+				
+				
+			}
 
 		
 	}

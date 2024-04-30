@@ -26,7 +26,15 @@ export class BusinessMenuComponent implements OnInit
 		ngOnInit
 		(): void
 			{
-				this.getBusinessInfo();
+				const token = this.localStorageService.getToken();
+				if
+				(
+					token &&
+					token != ""
+				)
+					{
+						this.getBusinessInfo();
+					}
 			}
 
 		async getBusinessInfo
@@ -40,6 +48,8 @@ export class BusinessMenuComponent implements OnInit
 						const data = await this.businessService.get();
 
 						this.business = data.business;
+
+						this.localStorageService.updateBusinessInfo(this.business);
 
 						this.isLoading = false;
 
@@ -56,7 +66,7 @@ export class BusinessMenuComponent implements OnInit
 		logout():void
 			{
 				this.localStorageService.logout();
-				this.router.navigate(['login']);
+				this.router.navigate(['/','auth','login']);
 			}
 
 	}

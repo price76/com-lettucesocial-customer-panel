@@ -34,7 +34,7 @@ export class CreatorService
 
 		async getAllCreatorByZipcode
 		(
-			zipcode:number
+			zipcode:string
 		):Promise<any>
 			{
 				let headers: HttpHeaders = new HttpHeaders();

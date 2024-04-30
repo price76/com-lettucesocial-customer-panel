@@ -1,0 +1,32 @@
+<section
+    *ngIf="isLoggedIn"
+>
+    <p
+
+    >
+        The lettuceSocial app restricts users to searching for creators within their community to build a hyper-local, community-powered marketing channel for small businesses. You can search the following zip codes
+    </p>
+    
+    <searched-zip-code-panel></searched-zip-code-panel>
+</section>
+
+<section
+    *ngIf="!isLoggedIn"
+>
+    <p>
+        You've reached your search limit.
+        <br>
+        <a
+            href="/auth/login"
+        >
+            Sign up
+        </a>
+            or 
+        <a
+            href="/auth/login"
+        >
+            login
+        </a>
+        to continue exploring!
+    </p>
+</section>

@@ -10,22 +10,32 @@ export class LocalStorageService
 	{
 
 		SEARCHED_ZIP_CODE_LIST_KEY:string = "SEARCHED_ZIP_CODE_LIST";
+		IS_APPROVED_KEY: string = "IS_APPROVED";
+		BUSINESS_NAME_KEY: string = "BUSINESS_NAME";
 
 		constructor() { }
 
 		addZipCodeToList
 		(
-			zipCode:number
-		)
+			zipCode:string
+		):void
 			{
-				const zipCodeList:Array<number> = this.getZipCodeList();
-				zipCodeList.push(zipCode);
-				this.setZipCodeList(zipCodeList);
+				console.log("121312");
+				
+				const zipCodeList:string[] = this.getZipCodeList();
+				if
+				(
+					!zipCodeList.includes(zipCode)
+				)
+					{
+						zipCodeList.push(zipCode);
+						this.setZipCodeList(zipCodeList);
+					}
 			}
 
 		setZipCodeList
 		(
-			zipCodeList: Array<number>
+			zipCodeList: string[]
 		):void
 			{
 				const zipCodeListString = zipCodeList.toString();
@@ -33,7 +43,7 @@ export class LocalStorageService
 			}
 
 		getZipCodeList
-		():Array<number>
+		():string[]
 			{
 				const zipCodeListString = localStorage.getItem(this.SEARCHED_ZIP_CODE_LIST_KEY);
 
@@ -42,11 +52,8 @@ export class LocalStorageService
 					zipCodeListString
 				)
 					{
-						const zipCodeList:Array<number> = zipCodeListString
-							.split(",")
-							.map(
-								(i)=> {return parseInt(i)}
-							);
+						const zipCodeList:string[] = zipCodeListString
+							.split(",");
 						
 
 						return zipCodeList
@@ -72,6 +79,84 @@ export class LocalStorageService
 				else
 					{
 						return ""
+					}
+			}
+
+		getIsApproved
+		():boolean
+			{
+				const isApprovedString: any = localStorage.getItem(this.IS_APPROVED_KEY);
+
+				if
+				(
+					isApprovedString &&
+					isApprovedString == "true"
+				)
+					{
+						return true;
+					}
+				else
+					{
+						return false
+					}
+			}
+
+		setIsApproved
+		(
+			isApproved:boolean
+		):void
+			{
+				let isApprovedString: string = "false";
+
+				if
+				(
+					isApproved
+				)
+					{
+						isApprovedString = "true";
+					}
+
+				localStorage.setItem(this.IS_APPROVED_KEY,isApprovedString);
+
+			}
+
+		getBusinessName
+		():string
+			{
+				const businessName: string | null = localStorage.getItem(this.BUSINESS_NAME_KEY);
+
+				if(businessName)
+				{
+					return businessName
+				}
+				else
+				{
+					return "";
+				}
+
+			}
+
+		setBusinessName
+		(
+			businessName:string
+		):void
+			{
+				localStorage.setItem(this.BUSINESS_NAME_KEY,businessName);
+			}
+
+		updateBusinessInfo
+		(
+			business:any
+		):void
+			{
+				this.setIsApproved(business.isApproved);
+
+				if
+				(
+					business.businessName
+				)
+					{
+						this.setBusinessName(business.businessName);
 					}
 			}
 

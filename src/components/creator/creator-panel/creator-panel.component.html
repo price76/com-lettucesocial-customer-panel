@@ -8,7 +8,7 @@
     >
         <logo-type></logo-type>
         <legend>
-            Hi 👋 <br>
+            Hi {{businessName}}👋 <br>
             Let’s match you
             with a local nano-influencer
         </legend>
@@ -28,25 +28,28 @@
                 ></creator-filter>
             </li>
         </ul>
-        <section
+        <search-limit-reached
+            *ngIf="hasReachedSearchLimit()"
+        ></search-limit-reached>
+        <!-- <section
             id="secSearchLimitReached"
             *ngIf="hasReachedSearchLimit()"
         >
             You've reached your search limit.
             <br>
             <a
-                href="login"
+                href="/auth/login"
             >
                 Sign up
             </a>
              or 
             <a
-                href="login"
+                href="/auth/login"
             >
                 login
             </a>
              to continue exploring!
-        </section>
+        </section> -->
     </form>
 
     <div

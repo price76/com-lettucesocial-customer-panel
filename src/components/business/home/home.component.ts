@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit
 				)
 					{
 						this.business = await this.getBusinessInfo();
+						this.localStorageService.updateBusinessInfo(this.business);
 
 						if
 						(
@@ -66,9 +67,11 @@ export class HomeComponent implements OnInit
 
 						const data = await this.businessService.get();
 
+						const business = data.business;
+
 						this.isLoading = false;
 
-						return data.business;
+						return business;
 
 					}
 				catch

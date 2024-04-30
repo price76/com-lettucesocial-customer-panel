@@ -21,7 +21,8 @@ export class BusinessService
 			private httpInterceptor: HttpInterceptorService,
 		) { }
 
-		async get():Promise<any>
+		async get
+		():Promise<any>
 			{
 				let headers: HttpHeaders = new HttpHeaders();
 				const result = await this.httpInterceptor.get(
