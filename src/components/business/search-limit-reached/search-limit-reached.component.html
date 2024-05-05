@@ -16,17 +16,21 @@
     <p>
         You've reached your search limit.
         <br>
-        <a
-            href="/auth/login"
+        <button
+            type="button"
+            title="Sign up to lettuceSocial"
+            (click)="goToSignUp()"
         >
             Sign up
-        </a>
+        </button>
             or 
-        <a
-            href="/auth/login"
+        <button
+            type="button"
+            title="Sign in to lettuceSocial"
+            (click)="goToSignIn()"
         >
-            login
-        </a>
+            Login
+        </button>
         to continue exploring!
     </p>
 </section>

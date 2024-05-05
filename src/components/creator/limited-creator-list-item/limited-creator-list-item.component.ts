@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NavigationHelper } from 'src/helper/navigationHelper';
 
 @Component(
 	{
@@ -12,10 +13,21 @@ export class LimitedCreatorListItemComponent
 	{
 		@Input() creator!: any;
 
+		constructor
+		(
+			private navigationHelper: NavigationHelper
+		){}
+
 		getCreatorImageUrl
 		():string
 			{
 				const url = `https://assets.lettucesocial.com/images/creators2/${this.creator.profilePicture}`;
 				return url;
+			}
+
+		goToSignIn
+		():void
+			{
+				this.navigationHelper.toLogin();
 			}
 }

@@ -94,6 +94,15 @@ export class EditProfileComponent implements OnInit
 						validationResult.messageList.push("Enter zip code.");
 					}
 
+				else if
+				(
+					business.zipcode.length != 5
+				)
+					{
+						validationResult.hasError = true;
+						validationResult.messageList.push("Zip code must be 5 digit.");
+					}
+
 				if
 				(
 					!business.businessInstagramHandle
@@ -102,11 +111,6 @@ export class EditProfileComponent implements OnInit
 						validationResult.hasError = true;
 						validationResult.messageList.push("Enter business Instagram handle.");
 					}
-
-				
-
-				
-
 
 				return validationResult;
 			}

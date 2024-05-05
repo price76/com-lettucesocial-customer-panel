@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationHelper } from 'src/helper/navigationHelper';
 import { LocalStorageService } from 'src/services/localstorage/local-storage.service';
 
 @Component(
@@ -16,7 +17,8 @@ export class SearchLimitReachedComponent implements OnInit
 
 		constructor
 		(
-			private localStorageService: LocalStorageService
+			private localStorageService: LocalStorageService,
+			private navigationHelper : NavigationHelper
 		){}
 
 		ngOnInit
@@ -31,6 +33,18 @@ export class SearchLimitReachedComponent implements OnInit
 					{
 						this.isLoggedIn = true;
 					}
+			}
+
+		goToSignIn
+		():void
+			{
+				this.navigationHelper.toLogin();
+			}
+
+		goToSignUp
+		():void
+			{
+				this.navigationHelper.toSignup();
 			}
 
 	}

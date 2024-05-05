@@ -1,7 +1,8 @@
+<logo-type></logo-type>
 <business-menu></business-menu>
 <form>
     <legend>
-        Create your profile
+        Edit your profile
     </legend>
 
     <fieldset
@@ -45,9 +46,9 @@
                     MOBILE
                 </label>
                 <input
-                    type="text"
+                    type="tel"
                     placeholder="Enter your mobile number"
-                    maxlength="200"
+                    maxlength="12"
                     [(ngModel)]= "business.mobile"
                     id="txtMobile"
                     name="txtMobile"
@@ -93,6 +94,7 @@
                     type="text"
                     placeholder="Enter your zip code"
                     maxlength="5"
+                    minlength="5"
                     [(ngModel)]= "business.zipcode"
                     id="txtZipcode"
                     name="txtZipcode"

@@ -12,34 +12,36 @@
         Title
     </dt>
     <dd>
-        <a
-            href="/login"
+        <button
+            type="button"
             title="signup or signin for more details"
+            (click)="goToSignIn()"
         >
             Login to see creator info
-        </a>
+        </button>
     </dd>
 </dl>
 <ul>
     <li>
-        <a
-            [routerLink]="['/','collabrotaion',creator._id,'selectPlane']"
+        <button
+            type="button"
+            title="signup or signin for more details"
+            (click)="goToSignIn()"
+            class="blur"
         >
-            Request Collaboration
-        </a>
+            signup/signin
+        </button>
     </li>
 
     <li>
-        <a
-            href="/login"
+        <button
+            type="button"
             title="signup or signin for more details"
+            (click)="goToSignIn()"
+            class="blur"
         >
-            <i
-            class = "blur"
-            >
-                signup/signin
-            </i>
-        </a>
+            @{{creator.instagramHandle}}***
+        </button>
     </li>
     
     <li>

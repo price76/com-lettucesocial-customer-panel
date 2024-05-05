@@ -22,12 +22,12 @@
   
   ul {
     li {
-      a {
+      button {
         color: #000;
         font-size: 14px;
       }
       &:nth-child(2) {
-        a {
+        button {
           display: flex;
           align-items: center;
           margin: 8px 0 0 0;
@@ -72,7 +72,7 @@
         bottom: 135px;
         left: 25px;
         right: 25px;
-        a {
+        button {
           border: none;
           background-color: #764af1;
           color: #fff;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationHelper } from 'src/helper/navigationHelper';
 import { BusinessService } from 'src/services/business/business.service';
 import { LocalStorageService } from 'src/services/localstorage/local-storage.service';
 
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit
 		(
 			private localStorageService: LocalStorageService,
 			private router:Router,
-			private businessService: BusinessService
+			private businessService: BusinessService,
+			private navigationHelper: NavigationHelper
 		){}
 
 		async ngOnInit
@@ -43,16 +45,16 @@ export class HomeComponent implements OnInit
 							this.business.businessName
 						)
 							{
-								this.naviagteTo_search();
+								this.navigationHelper.toSearch();
 							}
 						else
 							{
-								this.naviagteTo_editProfile();
+								this.navigationHelper.toEditProfile();
 							}
 					}
 				else
 					{
-						this.naviagteTo_search()
+						this.navigationHelper.toSearch();
 					}
 
 			}
@@ -81,18 +83,6 @@ export class HomeComponent implements OnInit
 					{
 						this.isLoading = false;
 					}
-			}
-
-		naviagteTo_search
-		():void
-			{
-				this.router.navigate(['/','creator']);
-			}
-
-		naviagteTo_editProfile
-		():void
-			{
-				this.router.navigate(['/','editProfile']);
 			}
 
 	}
