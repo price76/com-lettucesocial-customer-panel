@@ -1,0 +1,30 @@
+logo-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0 16px 0;
+}
+
+section{
+    padding: 16px 32px;
+    h1{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    p{
+        font-size: 18px;
+        margin: 32px 0;
+    }
+    a{
+        border: none;
+        background-color: #764af1;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 8px;
+        margin-top: 8px;
+        width: 100%;
+        display: block;
+        padding: 12px 0;
+    }
+}
