@@ -24,6 +24,20 @@ body:has(.creator-filter) {
 
 }
 
+body:has(.five-search) {
+  background-image: linear-gradient(
+    to bottom,
+    #9eda9e,
+    #aadb91,
+    #b8da84,
+    #d1e674,
+    #d8f070,
+    #FDD54F
+  );
+  min-height: 100svh;
+
+}
+
 body:has(.navigation-ribon){
   padding-bottom: 60px;
 }
