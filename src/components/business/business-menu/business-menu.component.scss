@@ -1,72 +1,121 @@
-details[open]{
-    background-color: #0e8141;
+details[open] {
+  background-color: #0e8141;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  z-index: 2;
+  padding: 0 32px;
+  border-radius: 16px 0 0 16px;
+  left: 10%;
+  summary {
     position: absolute;
-    right: 0;
-    height: 100vh;
-    z-index: 2;
-    padding: 0 32px;
-    border-radius: 16px 0 0 16px;
-    left: 10%;
-    summary{
-        position: absolute;
-        &::before{
-            content: "";
-            background: url("../../../assets/close-menu.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 25px 25px;
-            display: block;
-            width: 25px;
-            height: 25px;
-            position: absolute;
-            left: 0;
-            top: 16px;
-        }
+    &::before {
+      content: "";
+      background: url("../../../assets/close-menu.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 25px 25px;
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      left: 0;
+      top: 16px;
     }
-    ul{
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 70px;
+    li {
+      a {
+        color: #fff;
+        font-size: 18px;
         display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-top: 70px;
-        li{
-            a{
-                color: #fff;
-                font-size: 18px;
-            }
-        }
-        button{
-            color: #fff;
-            font-size: 18px;
-            border: none;
-            background: transparent;
-            padding: 0;
-        }
+        align-items: center;
+      }
     }
+    button {
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      background: transparent;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        background: url("../../../assets/logout.svg");
+        width: 20px;
+        margin-right: 8px;
+        height: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(180deg);
+
+      }
+    }
+  }
 }
-details{
-    position: relative;
-    summary{
-        display: block;
-        color: rgba(0, 0, 0, 0);
-        cursor: pointer;
-        &::before{
+details {
+  position: relative;
+  summary {
+    display: block;
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    &::before {
+      content: "";
+      background: url("../../../assets/menu-bars.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 32px 32px;
+      display: block;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+    }
+  }
+  ul {
+    li {
+      &:nth-child(1) {
+        a {
+          &::before {
             content: "";
-            background: url("../../../assets/menu-bars.svg");
+            background: url("../../../assets/profile.svg");
+            width: 20px;
+            margin-right: 8px;
+            height: 20px;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 32px 32px;
-            display: block;
-            width: 32px;
-            height: 32px;
-            position: absolute;
-            right: 16px;
-            top: 16px;
+            background-size: contain;
+
+          }
         }
+      }
+      &:nth-child(2) {
+        a {
+          &::before {
+            content: "";
+            background: url("../../../assets/search.svg");
+            width: 20px;
+            margin-right: 8px;
+            height: 20px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
     }
+  }
 }
 
 details summary::-webkit-details-marker,
 details summary::marker {
- display: none; 
- content: "";
+  display: none;
+  content: "";
 }

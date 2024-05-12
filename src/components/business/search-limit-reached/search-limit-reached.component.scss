@@ -1,6 +1,17 @@
-section{
-    p{
-        color: red;
-        margin: 16px 0;
-    }
+section {
+  p {
+    margin: 16px 0;
+    font-size: 16px;
+  }
+
+  button {
+    border: none;
+    color: #000;    
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+  }
 }

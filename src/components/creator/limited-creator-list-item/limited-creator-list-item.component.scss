@@ -20,8 +20,8 @@ dl {
         background-image: url("../../../assets/limit-user.png");
         background-position: center;
         background-repeat: no-repeat;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         margin-right: 8px;
         display: block;
         background-size: cover;
@@ -56,10 +56,10 @@ ul {
         &::before {
           content: "";
           background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
-          background-position: center;
+          background-position: right;
           background-repeat: no-repeat;
-          width: 40px;
-          height: 40px;
+          width: 39px;
+          height: 35px;
           display: block;
           background-size: cover;
         }
@@ -106,10 +106,10 @@ ul {
         padding: 9px 0;
         text-align: center;
         width: 100%;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
-        &::before{
+        &::before {
           content: "";
           background-image: url("../../../assets/lock-limit.png");
           background-position: center;
