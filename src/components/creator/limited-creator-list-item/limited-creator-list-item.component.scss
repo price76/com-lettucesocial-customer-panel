@@ -17,11 +17,12 @@ dl {
       background: transparent;
       &::before {
         content: "";
-        background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
+        background-image: url("../../../assets/limit-user.png");
         background-position: center;
         background-repeat: no-repeat;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
         display: block;
         background-size: cover;
       }
@@ -91,7 +92,7 @@ ul {
     }
     &:nth-child(1) {
       position: absolute;
-      bottom: 155px;
+      bottom: 145px;
       left: 25px;
       right: 25px;
       button {
@@ -102,9 +103,23 @@ ul {
         font-weight: bold;
         border-radius: 8px;
         display: block;
-        padding: 12px 0;
+        padding: 9px 0;
         text-align: center;
         width: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        &::before{
+          content: "";
+          background-image: url("../../../assets/lock-limit.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 25px;
+          margin-right: 8px;
+          display: block;
+          background-size: cover;
+        }
       }
     }
   }
