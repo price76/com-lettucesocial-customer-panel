@@ -56,11 +56,16 @@ ul {
     li {
       font-size: 24px;
       &:nth-child(2) {
-        a{
+        a {
           font-weight: bold;
-
         }
       }
     }
+  }
+}
+
+@-moz-document url-prefix() {
+  form {
+    height: 43vh;
   }
 }

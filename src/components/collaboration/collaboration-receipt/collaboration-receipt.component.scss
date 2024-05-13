@@ -79,3 +79,8 @@ add-business {
   }
 }
 
+@-moz-document url-prefix() {
+  #finished {
+    height: 40vh;
+  }
+}
