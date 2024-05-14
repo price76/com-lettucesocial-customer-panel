@@ -7,7 +7,7 @@
 body {
   font-family: NunitoSans;
   margin: 0;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 body:has(.creator-filter) {
@@ -18,10 +18,9 @@ body:has(.creator-filter) {
     #b8da84,
     #d1e674,
     #d8f070,
-    #FDD54F
+    #fdd54f
   );
   min-height: 100svh;
-
 }
 
 body:has(.five-search) {
@@ -32,13 +31,12 @@ body:has(.five-search) {
     #b8da84,
     #d1e674,
     #d8f070,
-    #FDD54F
+    #fdd54f
   );
   min-height: 100svh;
-
 }
 
-body:has(.navigation-ribon){
+body:has(.navigation-ribon) {
   padding-bottom: 60px;
 }
 
@@ -72,6 +70,33 @@ body:has(.navigation-ribon){
   margin-right: auto;
   margin-left: auto;
   box-sizing: border-box;
+}
+
+@-moz-document url-prefix() {
+  body:has(.creator-filter) {
+    background-image: linear-gradient(
+      to bottom,
+      #9eda9e,
+      #aadb91,
+      #b8da84,
+      #d1e674,
+      #d8f070,
+      #fdd54f
+    );
+    min-height: 100vh;
+  }
+  body:has(.five-search) {
+    background-image: linear-gradient(
+      to bottom,
+      #9eda9e,
+      #aadb91,
+      #b8da84,
+      #d1e674,
+      #d8f070,
+      #fdd54f
+    );
+    min-height: 100vh;
+  }
 }
 
 html,
