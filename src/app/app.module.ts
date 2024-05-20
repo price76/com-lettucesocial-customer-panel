@@ -44,9 +44,10 @@ import { SearchedZipCodeListItemComponent } from '../components/zipcode/searched
 import { SearchedZipCodeListComponent } from 'src/components/zipcode/searched-zip-code/searched-zip-code-list/searched-zip-code-list.component';
 import { SearchedZipCodePanelComponent } from '../components/zipcode/searched-zip-code/searched-zip-code-panel/searched-zip-code-panel.component';
 import { SearchLimitReachedComponent } from '../components/business/search-limit-reached/search-limit-reached.component';
-
-
-
+import { BusinessRequestFindCreatorComponent } from 'src/components/business/business-request-find-creator/business-request-find-creator.component';
+import { FindCreatorPlanComponent } from 'src/components/findCreator/find-creator-plan/find-creator-plan.component';
+import { FindCreatorInvoiceComponent } from 'src/components/findCreator/find-creator-invoice/find-creator-invoice.component';
+import { FindCreatorComponent } from '../components/findCreator/find-creator/find-creator.component';
 
 
 @NgModule(
@@ -77,7 +78,11 @@ import { SearchLimitReachedComponent } from '../components/business/search-limit
    SearchedZipCodeListComponent,
    SearchedZipCodeListItemComponent,
    SearchedZipCodePanelComponent,
-   SearchLimitReachedComponent
+   SearchLimitReachedComponent,
+   BusinessRequestFindCreatorComponent,
+   FindCreatorPlanComponent,
+   FindCreatorInvoiceComponent,
+   FindCreatorComponent
    
 		],
 		imports: [

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gtag } from 'angular-gtag';
 import { ErrorHelper } from 'src/helper/errorHelper';
+import { NavigationHelper } from 'src/helper/navigationHelper';
 import { CreatorService } from 'src/services/creator/creator.service';
 
 @Component(
@@ -24,7 +25,8 @@ export class RequestCollaborationComponent implements OnInit
 			private router: Router,
 			private creatorService: CreatorService,
 			private errorHelper: ErrorHelper,
-			private gtag: Gtag
+			private gtag: Gtag,
+			private navigationHelper: NavigationHelper
 		){}
 
 		ngOnInit
@@ -54,9 +56,7 @@ export class RequestCollaborationComponent implements OnInit
 		navigate_findCreatorByZipCode
 		():void
 			{
-				this.router.navigate(
-					['/','creator']
-				);
+				this.navigationHelper.toSearch();
 			}
 
 
@@ -71,17 +71,28 @@ export class RequestCollaborationComponent implements OnInit
 							this.creatorId
 						);
 
-						
+						if
+						(
+							data &&
+							data.creator
+						)
+							{
+								this.creator = data.creator;
 
-						this.creator = data.creator;
-
-						this.gtag.event(
-							'select_creator',
-							{ 
-								creator_id: this.creator.toString(),
-								creator_handle: this.creator.instagramHandle
+								this.gtag.event(
+									'select_creator',
+									{ 
+										creator_id: this.creator.toString(),
+										creator_handle: this.creator.instagramHandle
+									}
+								);
 							}
-						);
+						else
+							{
+								this.navigate_findCreatorByZipCode();
+							}
+
+						
 						
 						this.isLoading = false;
 					}
@@ -92,6 +103,7 @@ export class RequestCollaborationComponent implements OnInit
 					{
 						this.isLoading = false;
 						this.errorHelper.showErrorAsAlert(error);
+						this.navigate_findCreatorByZipCode();
 					}
 				
 

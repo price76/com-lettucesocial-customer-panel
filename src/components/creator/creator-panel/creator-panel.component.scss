@@ -1,9 +1,10 @@
-form {
-  legend {
-    font-size: 28px;
-    font-weight: bold;
-  }
-  label {
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+div {
+  
+  p {
     font-size: 14px;
     display: block;
     margin: 5px 0 10px 0;
@@ -18,7 +19,7 @@ form {
   form {
     &::after {
       content: "";
-      background: url("../../../assets/lettus.png");
+      // background: url("../../../assets/lettus.png");
       background-repeat: no-repeat;
       background-position: bottom;
       position: absolute;

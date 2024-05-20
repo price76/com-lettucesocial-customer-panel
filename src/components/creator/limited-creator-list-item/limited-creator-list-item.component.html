@@ -23,20 +23,38 @@
 </dl>
 <ul>
     <li>
-        <button
-            type="button"
-            title="signup or signin for more details"
-            (click)="goToSignIn()"
-            class="blur"
-        >
-            signup/signin
-        </button>
+        
+        <Details>
+            <summary>
+                Request Collaboration
+            </summary>
+            <p>
+                To request collaboration, you will need to 
+                <button
+                    type="button"
+                    title="signup for more details"
+                    (click)="goToSignUp()"
+                    class="blur"
+                >
+                    sign up
+                </button>
+                or
+                <button
+                    type="button"
+                    title="signin for more details"
+                    (click)="goToSignIn()"
+                    class="blur"
+                >
+                    log in
+                </button>
+            </p>
+        </Details>
     </li>
 
     <li>
         <button
             type="button"
-            title="signup or signin for more details"
+            title="sign up or sign in for more details"
             (click)="goToSignIn()"
             class="blur"
         >

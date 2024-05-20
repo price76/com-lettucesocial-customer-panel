@@ -30,4 +30,10 @@ export class LimitedCreatorListItemComponent
 			{
 				this.navigationHelper.toLogin();
 			}
+
+		goToSignUp
+		():void
+			{
+				this.navigationHelper.toSignup();
+			}
 }
