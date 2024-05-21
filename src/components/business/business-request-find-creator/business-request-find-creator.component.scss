@@ -1,0 +1,33 @@
+section {
+    margin: 32px 0;
+  background-image: linear-gradient(
+    to bottom,
+    #9eda9e,
+    #aadb91,
+    #b8da84,
+    #d1e674,
+    #d8f070,
+    #fdd54f
+  );
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+  p,b {
+    font-size: 16px;
+    text-align: center;
+  }
+  button {
+    border: none;
+    background-color: #764af1;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-top: 8px;
+    width: 100%;
+    display: block;
+    padding: 12px 0;
+  }
+}
