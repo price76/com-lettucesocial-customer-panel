@@ -31,10 +31,17 @@ dl {
   dd {
     font-size: 22px;
     text-transform: capitalize;
+    
     img {
       max-width: 100%;
       height: auto;
       border-radius: 16px;
+      
+      &:empty{
+        background-color: #ccc;
+        width: 370px;
+        height: 370px;
+      }
     }
   }
 }
@@ -58,7 +65,7 @@ ul {
           background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
           background-position: right;
           background-repeat: no-repeat;
-          width: 40px;
+          width: 44px;
           height: 40px;
           display: block;
           background-size: cover;
@@ -152,8 +159,14 @@ ul {
             content: none;
           }
           &::after{
-            content: "Close";
+            content: "";
+            background-image: url("../../../assets/close.svg");
             margin-right: auto;
+            margin-right: auto;
+            width: 25px;
+            height: 25px;
+            background-position: center;
+            background-size: contain;
           }
         }
       }
