@@ -12,6 +12,7 @@ export class LocalStorageService
 		SEARCHED_ZIP_CODE_LIST_KEY:string = "SEARCHED_ZIP_CODE_LIST";
 		IS_APPROVED_KEY: string = "IS_APPROVED";
 		BUSINESS_NAME_KEY: string = "BUSINESS_NAME";
+		TOKEN_KEY: string = "TOKEN";
 
 		constructor() { }
 
@@ -68,7 +69,7 @@ export class LocalStorageService
 		getToken
 		():string
 			{
-				let token = localStorage.getItem("TOKEN");
+				let token = localStorage.getItem(this.TOKEN_KEY);
 				if
 				(
 					token
@@ -162,6 +163,8 @@ export class LocalStorageService
 
 		logout():void
 			{
-				localStorage.clear();
+				localStorage.removeItem(this.IS_APPROVED_KEY);
+				localStorage.removeItem(this.BUSINESS_NAME_KEY);
+				localStorage.removeItem(this.TOKEN_KEY);
 			}
 	}

@@ -119,57 +119,45 @@ export class CreatorPanelComponent implements OnInit
 		hasReachedSearchLimit
 		():boolean
 			{
-				const isApproved: boolean = this.localStorageService.getIsApproved();
+				const searchedZipCodeList:string[] = this.localStorageService.getZipCodeList();
+	
 				if
 				(
-					isApproved
+					searchedZipCodeList
 				)
 					{
-						return false;
-					}
-				else
-					{
-						const searchedZipCodeList:string[] = this.localStorageService.getZipCodeList();
-	
+						const token: string = this.localStorageService.getToken();
+
+						const searchedZopCodeListCount:number = searchedZipCodeList.length;
+
 						if
 						(
-							searchedZipCodeList
+								(
+									token &&
+									token != "" &&
+									searchedZopCodeListCount >= 5
+								)
+							||
+								(
+									(
+										!token ||
+										token == "" 
+									)
+									&&
+									searchedZopCodeListCount >= 3
+								)
 						)
 							{
-								const token: string = this.localStorageService.getToken();
-
-								const searchedZopCodeListCount:number = searchedZipCodeList.length;
-
-								if
-								(
-										(
-											token &&
-											token != "" &&
-											searchedZopCodeListCount >= 5
-										)
-									||
-										(
-											(
-												!token ||
-												token == "" 
-											)
-											&&
-											searchedZopCodeListCount >= 3
-										)
-									
-								)
-									{
-										return true;
-									}
-								else
-									{
-										return false;
-									}
+								return true;
 							}
 						else
 							{
 								return false;
 							}
+					}
+				else
+					{
+						return false;
 					}
 				
 				

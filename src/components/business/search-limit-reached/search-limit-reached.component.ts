@@ -14,7 +14,7 @@ export class SearchLimitReachedComponent implements OnInit
 	{
 
 		isLoggedIn:boolean = false;
-
+		
 		constructor
 		(
 			private localStorageService: LocalStorageService,

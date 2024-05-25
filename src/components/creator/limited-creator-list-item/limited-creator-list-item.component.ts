@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NavigationHelper } from 'src/helper/navigationHelper';
+import { LocalStorageService } from 'src/services/localstorage/local-storage.service';
 
 @Component(
 	{
@@ -9,14 +10,41 @@ import { NavigationHelper } from 'src/helper/navigationHelper';
 	}
 )
 
-export class LimitedCreatorListItemComponent
+export class LimitedCreatorListItemComponent implements OnInit
 	{
 		@Input() creator!: any;
 
+		isLoggedIn:boolean = false;
+		isApproved:boolean = false;
+
 		constructor
 		(
-			private navigationHelper: NavigationHelper
+			private navigationHelper: NavigationHelper,
+			private localStorageService: LocalStorageService
 		){}
+			
+		ngOnInit(): void {
+			const token: string = this.localStorageService.getToken();
+			if
+			(
+				token &&
+				token != ""
+			)
+				{
+					this.isLoggedIn = true;
+					
+
+					const isApproved: boolean = this.localStorageService.getIsApproved();
+					if
+					(
+						isApproved
+					)
+						{
+							this.isApproved = true;
+						}
+					
+				}
+		}
 
 		getCreatorImageUrl
 		():string

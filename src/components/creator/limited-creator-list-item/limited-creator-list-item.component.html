@@ -28,7 +28,9 @@
             <summary>
                 
             </summary>
-            <p>
+            <p
+                *ngIf=" !isLoggedIn && !isApproved"
+            >
                 To request collaboration, you will need to 
                 <button
                     type="button"
@@ -48,6 +50,12 @@
                     log in
                 </button>
             </p>
+
+            <p
+                *ngIf=" isLoggedIn && !isApproved"
+            >
+                Hang tight—your access to all local creator's details is just around the corner! While we review & authenticate your account, you can still request collaborations with unlocked creators. We'll text you once your account is approved.
+            </p>
         </Details>
     </li>
 
@@ -56,7 +64,6 @@
             type="button"
             title="sign up or sign in for more details"
             (click)="goToSignIn()"
-            class="blur"
         >
             @{{creator.instagramHandle}}***
         </button>
