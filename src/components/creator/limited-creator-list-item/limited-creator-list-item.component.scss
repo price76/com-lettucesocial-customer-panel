@@ -20,8 +20,8 @@ dl {
         background-image: url("../../../assets/limit-user.png");
         background-position: center;
         background-repeat: no-repeat;
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         margin-right: 8px;
         display: block;
         background-size: cover;
@@ -31,13 +31,13 @@ dl {
   dd {
     font-size: 22px;
     text-transform: capitalize;
-    
+
     img {
       max-width: 100%;
       height: auto;
       border-radius: 16px;
-      
-      &:empty{
+
+      &:empty {
         background-color: #ccc;
         width: 370px;
         height: 370px;
@@ -54,28 +54,80 @@ ul {
     }
 
     &:nth-child(2) {
-      button {
-        display: flex;
-        align-items: center;
-        margin: 8px 0 0 0;
-        border: none;
-        background: transparent;
-        &::before {
-          content: "";
-          background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
-          background-position: right;
-          background-repeat: no-repeat;
-          width: 44px;
-          height: 40px;
-          display: block;
-          background-size: cover;
+      .instagram-details {
+        summary {
+          display: flex;
+          align-items: center;
+          margin: 8px 0 0 0;
+          border: none;
+          background: transparent;
+          gap: 5px;
+          &::before {
+            content: "";
+            background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-size: cover;
+          }
+        }
+      }
+      details[open] {
+        position: relative;
+        p {
+          font-size: 16px;
+          font-weight: normal;
+          position: absolute;
+          background-color: #4d4c4c;
+          color: #fff;
+          font-weight: bold;
+          border-radius: 8px;
+          text-align: center;
+          z-index: 2;
+          width: 91%;
+          padding: 38px 16px 16px 16px;
+          top: -30px;
+          right: 0;
+          left: 0;
+        }
+        button {
+          font-size: 16px;
+          color: #5271ff;
+          border: none;
+          text-shadow: none;
+          font-weight: normal;
+          background-color: transparent;
+        }
+        summary {
+          background-color: transparent;
+          color: black;
+          font-weight: normal;
+          &::before {
+            content: none;
+          }
+          &::after {
+            content: "";
+            background-image: url("../../../assets/close.svg");
+            margin-right: auto;
+            margin-right: auto;
+            width: 25px;
+            height: 25px;
+            background-position: center;
+            background-size: contain;
+            z-index: 3;
+            position: absolute;
+            left: 8px;
+            top: -22px;
+          }
         }
       }
     }
     &:nth-child(3) {
       display: flex;
       align-items: center;
-      margin: 8px 0 0 0;
+      margin: 4px 0 0 0;
       a,
       b {
         color: #000;
@@ -83,14 +135,14 @@ ul {
         display: flex;
         align-items: center;
         font-weight: normal;
-        gap: 10px;
+        gap: 8px;
         &::before {
           content: "";
           background-image: url("https://assets.lettucesocial.com/images/customer-panel/location-icon.svg");
           background-position: center;
           background-repeat: no-repeat;
-          width: 30px;
-          height: 30px;
+          width: 35px;
+          height: 35px;
           display: block;
           background-size: cover;
           margin-left: 3px;
@@ -102,8 +154,8 @@ ul {
       bottom: 145px;
       left: 25px;
       right: 25px;
-      details{
-        summary{
+      details {
+        summary {
           background-color: #4d4c4c;
           color: #888;
           font-size: 16px;
@@ -126,39 +178,39 @@ ul {
             display: block;
             background-size: cover;
           }
-          &::after{
+          &::after {
             content: "Request Collaboration";
           }
         }
       }
-      details[open]{
-        background-color: rgba(255,255,255,0.9);
+      details[open] {
+        background-color: rgba(255, 255, 255, 0.9);
         color: #888;
         font-size: 16px;
         font-weight: bold;
         border-radius: 8px;
-        padding: 16px 8px;
+        padding: 4px 8px 16px 8px;
         text-align: center;
         width: 100%;
-        p{
+        p {
           font-size: 16px;
           font-weight: normal;
         }
-        button{
+        button {
           font-size: 16px;
-          color:#5271ff;
+          color: #5271ff;
           border: none;
           text-shadow: none;
           font-weight: normal;
         }
-        summary{
+        summary {
           background-color: transparent;
           color: black;
           font-weight: normal;
-          &::before{
+          &::before {
             content: none;
           }
-          &::after{
+          &::after {
             content: "";
             background-image: url("../../../assets/close.svg");
             margin-right: auto;
@@ -176,6 +228,6 @@ ul {
 
 details summary::-webkit-details-marker,
 details summary::marker {
- display: none; 
- content: "";
+  display: none;
+  content: "";
 }

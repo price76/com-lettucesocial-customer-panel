@@ -14,11 +14,15 @@ dl {
       max-width: 100%;
       height: auto;
       border-radius: 16px;
+
+      &:empty {
+        background-color: #ccc;
+        width: 370px;
+        height: 370px;
+      }
     }
   }
 }
-
-
 
 ul {
   li {
@@ -46,21 +50,22 @@ ul {
     &:nth-child(3) {
       display: flex;
       align-items: center;
-      margin: 8px 0 0 0;
-      a,b{
+      margin: 4px 0 0 0;
+      a,
+      b {
         color: #000;
         font-size: 14px;
         display: flex;
         align-items: center;
         font-weight: normal;
-        gap: 10px;
-        &::before{
+        gap: 4px;
+        &::before {
           content: "";
           background-image: url("https://assets.lettucesocial.com/images/customer-panel/location-icon.svg");
           background-position: center;
           background-repeat: no-repeat;
-          width: 30px;
-          height: 30px;
+          width: 35px;
+          height: 35px;
           display: block;
           background-size: cover;
           margin-left: 3px;
