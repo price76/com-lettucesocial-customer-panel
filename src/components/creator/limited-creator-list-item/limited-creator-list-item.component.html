@@ -60,13 +60,47 @@
     </li>
 
     <li>
-        <button
+        <!-- <button
             type="button"
             title="sign up or sign in for more details"
             (click)="goToSignIn()"
         >
-            @{{creator.instagramHandle}}***
-        </button>
+        @{{creator.instagramHandle}}***
+        </button> -->
+
+        <Details>
+            <summary>
+                @{{creator.instagramHandle}}***
+            </summary>
+            <p
+                *ngIf=" !isLoggedIn && !isApproved"
+            >
+                To view creator instagram page, you will need to 
+                <button
+                    type="button"
+                    title="signup for more details"
+                    (click)="goToSignUp()"
+                    class="blur"
+                >
+                    sign up
+                </button>
+                or
+                <button
+                    type="button"
+                    title="signin for more details"
+                    (click)="goToSignIn()"
+                    class="blur"
+                >
+                    log in
+                </button>
+            </p>
+
+            <p
+                *ngIf=" isLoggedIn && !isApproved"
+            >
+                Hang tight—your access to all local creator's details is just around the corner! While we review & authenticate your account, you can still request collaborations with unlocked creators. We'll text you once your account is approved.
+            </p>
+        </Details>
     </li>
     
     <li>
