@@ -8,10 +8,14 @@ form {
         display: none;
       }
       input {
+        background: #ffffff;
+        border: 1px solid #d0d5dd;
+        box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+          0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+        border-radius: 9999px;
         width: 100%;
         border: none;
-        border-radius: 8px;
-        padding: 14px 0;
+        padding: 10px 0;
         margin-bottom: 4px;
         &::placeholder {
           color: #c0c4d6;
@@ -20,24 +24,25 @@ form {
       }
     }
     button.primary {
-      border: none;
-      background-color: #764af1;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 500;
-      border-radius: 8px;
-      margin-top: 8px;
-      width: 100%;
-      display: block;
-      padding: 12px 0;
+      width: 36px;
+      height: 36px;
+      background: #d0d5dd;
+      border: 1px solid #d0d5dd;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 50%;
+      background-image: url("../../../assets/arrow-right.svg");
+      text-indent: -90000px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25px 25px;
     }
-    &:nth-child(2){
+    &:nth-child(2) {
       margin-top: 4px;
     }
   }
 }
 
-.validation-result{
+.validation-result {
   background-color: transparent;
   list-style: none;
 }

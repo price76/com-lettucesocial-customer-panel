@@ -11,28 +11,28 @@ body {
 }
 
 body:has(.creator-filter) {
-  background-image: linear-gradient(
-    to bottom,
-    #9eda9e,
-    #aadb91,
-    #b8da84,
-    #d1e674,
-    #d8f070,
-    #fdd54f
-  );
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   #9eda9e,
+  //   #aadb91,
+  //   #b8da84,
+  //   #d1e674,
+  //   #d8f070,
+  //   #fdd54f
+  // );
   min-height: 100svh;
 }
 
 body:has(.five-search) {
-  background-image: linear-gradient(
-    to bottom,
-    #9eda9e,
-    #aadb91,
-    #b8da84,
-    #d1e674,
-    #d8f070,
-    #fdd54f
-  );
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   #9eda9e,
+  //   #aadb91,
+  //   #b8da84,
+  //   #d1e674,
+  //   #d8f070,
+  //   #fdd54f
+  // );
   min-height: 100svh;
 }
 

@@ -1,83 +1,85 @@
-<business-menu></business-menu>
-<logo-type></logo-type>
-<section
-    class="container"
->
-    <loading-list
-        *ngIf = 'isLoading'
-    ></loading-list>
-    <!-- not searched yet -->
+<div class="creator-panel">
+    <business-menu></business-menu>
+    <logo-type></logo-type>
     <section
-        *ngIf = '!filterOptions.zipCode'
+        class="container"
     >
-        
-
-        <h2>
-            Hi {{businessName}}👋 <br>
-            Let’s match you
-            with a local nano-influencer
-        </h2>
-
-        <div
-            id="searchPanel"
-            *ngIf="!hasReachedSearchLimit()"
-        >
-            <p>
-                Enter the zip code of your business location
-            </p>
-            <creator-filter
-                id="cmpFilterCreator"
-                name="cmpFilterCreator"
-                (setFilter) = 'setFilter($event)'
-            ></creator-filter>
-        </div>
-
-        <search-limit-reached
-            *ngIf="hasReachedSearchLimit()"
-        ></search-limit-reached>
-    </section>
-    
-    <!-- seached -->
-    <section
-        *ngIf= "!isLoading && filterOptions.zipCode"
-    >
+        <loading-list
+            *ngIf = 'isLoading'
+        ></loading-list>
+        <!-- not searched yet -->
         <section
-            *ngIf = 'creatorList && creatorList.length != 0'
+            *ngIf = '!filterOptions.zipCode'
         >
-            <a
-                href="/creator"
-                class="search-zip"
+            
+
+            <h2>
+                <!-- Hi {{businessName}}👋 <br> -->
+                Let’s match you
+                with a local nano-influencer
+            </h2>
+
+            <div
+                id="searchPanel"
+                *ngIf="!hasReachedSearchLimit()"
             >
-                Search in new zip code
-            </a>
-            
-            <b>
-                {{creatorList.length}} results found in {{filterOptions.zipCode}}
-            </b>
+                <p>
+                    Enter the zip code of your business location
+                </p>
+                <creator-filter
+                    id="cmpFilterCreator"
+                    name="cmpFilterCreator"
+                    (setFilter) = 'setFilter($event)'
+                ></creator-filter>
+            </div>
 
-            <p class="find">
-                Find your local nano-influencer & request to collaborate.
-            </p>
-
-            <creator-list
-                [creatorList]="creatorList"
-            ></creator-list>
+            <search-limit-reached
+                *ngIf="hasReachedSearchLimit()"
+            ></search-limit-reached>
         </section>
-
         
-
-        <div
-            *ngIf = '!isLoading && filterOptions.zipCode && creatorList && creatorList.length == 0'
+        <!-- seached -->
+        <section
+            *ngIf= "!isLoading && filterOptions.zipCode"
         >
-            <business-request-notification
-                [zipcode]="filterOptions.zipCode"
-            ></business-request-notification>
-            
-        </div>
+            <section
+                *ngIf = 'creatorList && creatorList.length != 0'
+            >
+                <a
+                    href="/creator"
+                    class="search-zip"
+                >
+                    Search in new zip code
+                </a>
+                
+                <b>
+                    {{creatorList.length}} results found in {{filterOptions.zipCode}}
+                </b>
 
-        <navigation-ribon
-            *ngIf = '!isLoading && filterOptions.zipCode'
-        ></navigation-ribon>
+                <p class="find">
+                    Find your local nano-influencer & request to collaborate.
+                </p>
+
+                <creator-list
+                    [creatorList]="creatorList"
+                ></creator-list>
+            </section>
+
+            
+
+            <div
+                *ngIf = '!isLoading && filterOptions.zipCode && creatorList && creatorList.length == 0'
+            >
+                <business-request-notification
+                    [zipcode]="filterOptions.zipCode"
+                ></business-request-notification>
+                
+            </div>
+
+            <navigation-ribon
+                *ngIf = '!isLoading && filterOptions.zipCode'
+            ></navigation-ribon>
+        </section>
+        
     </section>
-    
-</section>
+</div>

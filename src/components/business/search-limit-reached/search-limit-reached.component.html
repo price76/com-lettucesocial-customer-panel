@@ -13,26 +13,45 @@
 <section
     *ngIf="!isLoggedIn"
 >
+    <h2> You've reached your search limit.</h2>
     <p>
-        You've reached your search limit.
-        <br>
-        <button
+        <!-- <button
             type="button"
             title="Sign up to lettuceSocial"
             (click)="goToSignUp()"
-        >
+        > -->
             Sign up
-        </button>
+        <!-- </button> -->
             or 
-        <button
+        <!-- <button
             type="button"
             title="Sign in to lettuceSocial"
             (click)="goToSignIn()"
-        >
+        > -->
             Login
-        </button>
+        <!-- </button> -->
         to continue exploring!
     </p>
+    <ul>
+        <li>
+            <button
+            type="button"
+            title="Sign in to lettuceSocial"
+            (click)="goToSignIn()"
+            >
+                Login
+            </button>
+        </li>
+        <li>
+            <button
+            type="button"
+            title="Sign up to lettuceSocial"
+            (click)="goToSignUp()"
+            >
+                Sign up
+            </button>
+        </li>
+    </ul>
 </section>
 
 
