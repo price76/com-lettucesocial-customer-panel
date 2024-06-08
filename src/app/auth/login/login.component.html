@@ -3,6 +3,9 @@
     <legend>
         Login
     </legend>
+    <p>
+        Welcome back!
+    </p>
     <fieldset
         [disabled]="isLoading"
     >
@@ -33,6 +36,9 @@
                     [(ngModel)]= "password"
                 >
             </li>
+            <li>
+                <a href="#" class="forgot">Forgot password</a>
+            </li>
         </ul>
         <ul>
             <loading
@@ -58,7 +64,7 @@
     </fieldset>
 </form>
 
-<ul>
+<ul class="sign-up">
     <li>
         Don't have an account?
     </li>

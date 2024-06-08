@@ -1,17 +1,62 @@
 section {
-  p {
-    margin: 16px 0;
-    font-size: 16px;
+  h2 {
+    font-weight: 600;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    font-size: 24px;
+    line-height: 32px;
+    color: #101828;
+    &::before{
+      content: "";
+      background: url("../../../assets/border-lock.svg");
+      display: block;
+      width: 56px;
+      height: 56px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin:0 auto 24px auto;
+    }
   }
-
-  button {
-    border: none;
-    background-color: transparent;
+  p {
+    margin: 8px 0 32px 0px;
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    margin: 0;
-    padding: 0;
-    color: #0000ee;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #344054;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    li {
+      button {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &:nth-child(1) {
+        button {
+          background: #000000;
+          border: 1px solid #000000;
+          color: #fff;
+        }
+      }
+      &:nth-child(2) {
+        button {
+          background: #ffffff;
+          border: 1px solid #d0d5dd;
+          color: #344054;
+        }
+      }
+    }
   }
 }
