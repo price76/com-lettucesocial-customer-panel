@@ -2,6 +2,10 @@
     <h1>
         Select Collaboration
     </h1>
+    <p>
+        Tell us which collaboration package meets your needs & we’ll find the best match creator for your brand.
+    </p>
+    <a href="#" class="support-link">Need support?</a>
     <loading
         *ngIf="isLoading"
     ></loading>
@@ -21,20 +25,23 @@
                 {{package.title}}
             </h2>
             <ol>
+                <li class="price">${{package.price}}</li>
+                <li class="Collaborate">
+                    Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer<span *ngIf="package.influencerNumber > 1" >s</span>
+                </li>
                 <li>
                     {{package.reelsNumber}} Instagram Reel<span *ngIf="package.reelsNumber > 1" >s</span>
                 </li>
                 <li>
                     {{package.postNumbers}} Instagram Post<span *ngIf="package.postNumbers > 1" >s</span>
                 </li>
-                <li>
-                    Collaborate with <b>{{package.influencerNumber}}</b> local nano-influencer<span *ngIf="package.influencerNumber > 1" >s</span>
-                </li>
+                
             </ol>
             <a
                 [routerLink]="['/','collabrotaion',creatorId,'invoice',package._id]"
             >
-                ${{package.price}}
+                <!-- ${{package.price}} -->
+                Select
             </a>
         </li>
 
