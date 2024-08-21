@@ -8,6 +8,8 @@ body {
   font-family: NunitoSans;
   margin: 0;
   background-color: #fafafa;
+  min-height: 100svh;
+
 }
 
 body:has(.creator-filter) {
