@@ -19,11 +19,14 @@ dl {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
-
+    }
+    &:nth-child(2) {
+      margin-bottom: 8px;
       &:empty {
         background-color: #ccc;
         width: 100%;
-        height: 100%;
+        height: 370px;
+        border-radius: 8px;
       }
     }
   }
