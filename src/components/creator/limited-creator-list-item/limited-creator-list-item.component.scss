@@ -9,8 +9,8 @@ dl {
   }
   &:nth-child(1) {
     button {
+      display: none;
       border: none;
-      display: flex;
       align-items: center;
       margin: 8px 0 0 0;
       border: none;
@@ -29,18 +29,18 @@ dl {
     }
   }
   dd {
-    font-size: 22px;
-    text-transform: capitalize;
-
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 16px;
-
+      border-radius: 8px;
+    }
+    &:nth-child(2) {
+      margin-bottom: 8px;
       &:empty {
         background-color: #ccc;
-        width: 370px;
+        width: 100%;
         height: 370px;
+        border-radius: 8px;
       }
     }
   }
@@ -56,22 +56,24 @@ ul {
     &:nth-child(2) {
       .instagram-details {
         summary {
-          display: flex;
-          align-items: center;
-          margin: 8px 0 0 0;
-          border: none;
-          background: transparent;
-          gap: 5px;
-          &::before {
-            content: "";
-            background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 40px;
-            height: 40px;
-            display: block;
-            background-size: cover;
-          }
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #101828;
+          filter: blur(4px);
+
+          // &::before {
+          //   content: "";
+          //   background-image: url("https://assets.lettucesocial.com/images/customer-panel/Instagram.svg");
+          //   background-position: center;
+          //   background-repeat: no-repeat;
+          //   width: 40px;
+          //   height: 40px;
+          //   display: block;
+          //   background-size: cover;
+          // }
         }
       }
       details[open] {
@@ -128,58 +130,55 @@ ul {
       display: flex;
       align-items: center;
       margin: 4px 0 0 0;
-      a,
       b {
-        color: #000;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        font-weight: normal;
-        gap: 8px;
-        &::before {
-          content: "";
-          background-image: url("https://assets.lettucesocial.com/images/customer-panel/location-icon.svg");
-          background-position: center;
-          background-repeat: no-repeat;
-          width: 35px;
-          height: 35px;
-          display: block;
-          background-size: cover;
-          margin-left: 3px;
-        }
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #667085;
+
+        // &::before {
+        //   content: "";
+        //   background-image: url("https://assets.lettucesocial.com/images/customer-panel/location-icon.svg");
+        //   background-position: center;
+        //   background-repeat: no-repeat;
+        //   width: 35px;
+        //   height: 35px;
+        //   display: block;
+        //   background-size: cover;
+        //   margin-left: 3px;
+        // }
       }
     }
     &:nth-child(1) {
-      position: absolute;
-      bottom: 145px;
-      left: 25px;
-      right: 25px;
       details {
         summary {
-          background-color: #4d4c4c;
-          color: #888;
-          font-size: 16px;
-          font-weight: bold;
-          border-radius: 8px;
-          padding: 9px 0;
-          text-align: center;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          &::before {
-            content: "";
-            background-image: url("../../../assets/lock-limit.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 25px;
-            height: 25px;
-            margin-right: 8px;
-            display: block;
-            background-size: cover;
-          }
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 20px;
+          color: #ffffff;
+          background: #d0d5dd;
+          border-radius: 9999px;
+          padding: 8px 26px;
+          position: absolute;
+          right: 0;
+          bottom: 3px;
+          // &::before {
+          //   content: "";
+          //   background-image: url("../../../assets/lock-limit.png");
+          //   background-position: center;
+          //   background-repeat: no-repeat;
+          //   width: 25px;
+          //   height: 25px;
+          //   margin-right: 8px;
+          //   display: block;
+          //   background-size: cover;
+          // }
           &::after {
-            content: "Request Collaboration";
+            content: "Request";
           }
         }
       }
