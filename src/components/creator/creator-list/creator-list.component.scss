@@ -3,10 +3,16 @@ ol {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  row-gap: 26px;
   margin-top: 32px;
   li {
     position: relative;
     flex: 0 19%;
+    border-bottom: 1px solid #e4e7ec;
+    padding-bottom: 16px;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 }
 
