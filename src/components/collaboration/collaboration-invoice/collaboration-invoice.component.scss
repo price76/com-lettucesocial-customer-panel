@@ -6,35 +6,90 @@ h1 {
   margin-bottom: 8px;
 }
 div {
-  padding:8px 16px;
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-top: 16px;
   h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #101828;
+    font-family: "Inter";
   }
   ol {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 8px;
+
     li {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #344054;
       padding: 0;
       background: none;
-      font-size: 14px;
-      &:last-child {
+      border: none;
+      box-shadow: none;
+      &:nth-child(1) {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
         text-align: center;
-        width: 70%;
-        margin: 12px auto;
+        color: #344054;
+        margin: 8px 0
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: flex;
+        align-items: center;
         &::before {
           content: "";
+          width: 24px;
+          height: 24px;
+          display: block;
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin-right: 8px;
         }
       }
-      &::before {
-        content: "\2713";
-        display: inline-block;
-        color: #659972;
-        font-size: 22px;
+      &:nth-child(2) {
+        &::before {
+          background: url("../../../assets/green-insta-reels.svg");
+        }
       }
+      &:nth-child(3) {
+        &::before {
+          background: url("../../../assets/green-insta-post.svg");
+        }
+      }
+    }
+    .price {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      color: #101828;
+      margin: 16px 0 8px 0;
+    }
+    .Collaborate {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      color: #344054;
+      margin-bottom: 16px;
     }
   }
 
@@ -50,47 +105,55 @@ div {
   }
 }
 
-#pln_6554a07e5f52a9024db02fe5 {
-  background-image: linear-gradient(
-    to right top,
-    #d4d4d4,
-    #c1c1c1,
-    #afafaf,
-    #9d9d9d,
-    #8b8b8b
-  );
-}
-#pln_6554a0e25f52a9024db02fe6 {
-  background-image: linear-gradient(
-    to right top,
-    #90d29a,
-    #73bf90,
-    #57ab85,
-    #39987b,
-    #108571
-  );
-}
-#pln_6554a1175f52a9024db02fe7 {
-  background-image: linear-gradient(
-    to right top,
-    #c6d45a,
-    #9fc34c,
-    #78b140,
-    #4d9f38,
-    #0d8c32
-  );
-}
+// #pln_6554a07e5f52a9024db02fe5 {
+//   background-image: linear-gradient(
+//     to right top,
+//     #d4d4d4,
+//     #c1c1c1,
+//     #afafaf,
+//     #9d9d9d,
+//     #8b8b8b
+//   );
+// }
+// #pln_6554a0e25f52a9024db02fe6 {
+//   background-image: linear-gradient(
+//     to right top,
+//     #90d29a,
+//     #73bf90,
+//     #57ab85,
+//     #39987b,
+//     #108571
+//   );
+// }
+// #pln_6554a1175f52a9024db02fe7 {
+//   background-image: linear-gradient(
+//     to right top,
+//     #c6d45a,
+//     #9fc34c,
+//     #78b140,
+//     #4d9f38,
+//     #0d8c32
+//   );
+// }
 
 form {
   margin-top: 16px;
   legend {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 8px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #101828;
   }
   p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
-    margin-bottom: 0;
+    line-height: 24px;
+    margin: 8px 0;
+    color: #344054;
   }
   button {
     border: none;
@@ -106,7 +169,7 @@ form {
     align-items: center;
     justify-content: center;
     position: relative;
-    &::after{
+    &::after {
       content: "";
       background: url("https://assets.lettucesocial.com/images/customer-panel/pointing.svg");
       background-position: center;

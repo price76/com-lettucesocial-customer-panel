@@ -9,25 +9,38 @@ dl {
   grid-template-rows: max-content max-content;
   align-items: center;
   column-gap: 14px;
+  border-bottom: 1px solid #e4e7ec;
+  margin-bottom: 6px;
+  padding-bottom: 16px;
   dt {
     display: none;
   }
   dd {
     img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
     }
+
     &:nth-child(2) {
       grid-row: span 2;
     }
     &:nth-child(4) {
-      font-size: 22px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+      color: #344054;
       text-transform: capitalize;
     }
     &:nth-child(6) {
-      color: #000;
-      font-size: 14px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #475467;
     }
   }
 }

@@ -1,12 +1,16 @@
 section {
   h1 {
+    font-family: "Inter";
+    font-style: normal;
     font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -0.02em;
+    font-size: 24px;
+    line-height: 32px;
     color: #101828;
   }
   p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #344054;
@@ -29,14 +33,14 @@ section {
   ul {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 32px;
     li {
       background: #ffffff;
       border: 1px solid #eaecf0;
       box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
         0px 4px 6px -2px rgba(16, 24, 40, 0.03);
       border-radius: 16px;
-      padding:32px 24px;
+      padding: 32px 24px;
       h2 {
         font-weight: 600;
         font-size: 36px;
@@ -44,12 +48,14 @@ section {
         text-align: center;
         letter-spacing: -0.02em;
         color: #101828;
+        font-family: "Inter";
       }
 
       ol {
         display: flex;
         flex-direction: column;
         gap: 8px;
+
         li {
           font-weight: 400;
           font-size: 16px;
@@ -73,35 +79,36 @@ section {
               margin-right: 8px;
             }
           }
-          &:nth-child(3){
-            &::before{
+          &:nth-child(3) {
+            &::before {
               background: url("../../../assets/green-insta-reels.svg");
             }
           }
-          &:nth-child(4){
-            &::before{
+          &:nth-child(4) {
+            &::before {
               background: url("../../../assets/green-insta-post.svg");
             }
           }
         }
         .price {
+          font-family: "Inter";
+          font-style: normal;
           font-weight: 600;
           font-size: 20px;
           line-height: 30px;
           text-align: center;
           color: #101828;
-          display: block;
           margin: 16px 0 8px 0;
         }
         .Collaborate {
-          display: block;
+          font-family: "Inter";
+          font-style: normal;
           font-weight: 400;
           font-size: 16px;
           line-height: 24px;
           text-align: center;
           color: #344054;
-          width: 80%;
-          margin:0 auto 16px auto;
+          margin-bottom: 16px;
         }
       }
 
@@ -116,7 +123,7 @@ section {
         color: #ffffff;
         width: 100%;
         display: block;
-        padding: 8px 0;
+        padding: 12px 0;
         text-align: center;
         margin-top: 32px;
       }
