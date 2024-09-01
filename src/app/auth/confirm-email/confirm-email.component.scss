@@ -1,8 +1,25 @@
 div {
-  padding: 16px 32px;
+  padding: 16px;
   h2 {
-    font-size: 36px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #101828;
+    &::before{
+      content: "";
+      background: url("../../../assets/confirm-email.svg");
+      width: 56px;
+      height: 56px;
+      display: block;
+      background-position: center;
+      background-size: contain;
+      margin: 0 auto 16px auto;
+    }
   }
+
   section {
     &:nth-child(2) {
       p {
@@ -13,18 +30,34 @@ div {
       }
     }
     &:nth-child(3) {
-      p{
+      p {
         margin: 16px 0;
-        font-size: 18px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #344054;
       }
-      a{
-        background-color: #764af1;
-        color: #fff;
-        border-radius: 8px;
-        padding: 8px 16px;
-        display: inline-block;
-        margin-top: 16px;
-        font-size: 18px;
+      a {
+        padding: 10px 18px;
+        gap: 8px;
+        background: #000000;
+        border: 1px solid #000000;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+        border-radius: 9999px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #ffffff;
+        width: 100%;
+        margin: 32px auto;
+        display: block;
+        text-align: center;
+        box-sizing: border-box;
       }
     }
   }

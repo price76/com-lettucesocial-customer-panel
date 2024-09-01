@@ -1,5 +1,5 @@
 form {
-  padding: 10px 30px;
+  padding: 10px 16px;
   height: 43svh;
   legend {
     display: block;
@@ -54,8 +54,8 @@ form {
       }
     }
     &:nth-child(2) {
-      margin-top: 12px;
-      margin-bottom: 12px;
+      // margin-top: 12px;
+      // margin-bottom: 12px;
     }
   }
 }
@@ -67,7 +67,7 @@ form {
   color: #027a48;
   text-align: right;
   display: block;
-  margin: 16px 0;
+  margin: 8px 0 24px 0;
 }
 
 .validation-result {
